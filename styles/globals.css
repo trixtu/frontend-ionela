@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.streichpreis {
+  display: inline-block;
+  position: relative;
+}
+
+.streichpreis::before {
+  border-top: 1px solid;
+  color: red;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 45%;
+  -webkit-transform: skewY(-10deg);
+  transform: skewY(-10deg);
+}
+
+.primary {
+  @apply bg-lime-600 text-white px-2 py-1 rounded-sm shadow-sm border;
+}
+
+.error-trixtu {
+  @apply bg-red-600 text-white px-2 py-1 rounded-sm shadow-sm border;
+}
+.css-mwlvgy-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  background-color: #25c2a0 !important;
+  color: black !important;
+}
+.css-10d9dml-MuiTabs-indicator {
+  background-color: #157560 !important;
+}
+
+input {
+  @apply bg-[#eee] border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4 outline-none;
+}
+.search {
+  @apply relative;
+}
+.search button,
+.search span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.search span {
+  left: 20px;
+  opacity: 0.5;
+  margin-top: 1px;
+}
+.search button {
+  right: 20px;
+  left: auto;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.search button:hover {
+  color: #028555;
+}
+
+.search input {
+  box-sizing: border-box;
+  display: block;
+  border-radius: 5px;
+  padding: 0 50px 0 45px;
+  font-size: 20px;
+  outline: none;
+  border: 2px solid #028555;
+  background: white;
+  height: 40px;
+}
+.address {
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.address p {
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.address p span {
+  opacity: 0.8;
+}
