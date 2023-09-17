@@ -4,8 +4,7 @@ import { buffer } from 'micro'
 const stripe = require('stripe')(process.env.STRIPE_SK)
 
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
-const endpointSecret =
-  'whsec_3332de25e9d778390cb434ae4f77dcef9905d63d8fccb0073e3f6b19cd701321'
+const endpointSecret = 'whsec_HqZsbSjag3OMLPW2qkEnbqJtEWo7HQRe'
 
 export default async function handle(req, res) {
   await mongooseConnect()
@@ -35,7 +34,6 @@ export default async function handle(req, res) {
           paid: true,
         })
       }
-      console.log(data)
       break
     default:
       console.log(`Unhandled event type ${event.type}`)
