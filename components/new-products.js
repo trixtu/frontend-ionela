@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductBox from './ui/product-box'
+import { Box, Grid } from '@mui/material'
 
 export default function NewProducts({
   products,
@@ -7,18 +8,24 @@ export default function NewProducts({
   ratings,
 }) {
   return (
-    <section className="flex flex-col px-4 bg-white items-center">
-      <div className="grid items-center gap-x-8 p-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <Box sx={{ backgroundColor: 'white' }}>
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12, lg: 12 }}
+        paddingX={{ xs: 4 }}
+      >
         {products.length > 0 &&
           products.map((p, index) => (
-            <ProductBox
-              key={index}
-              {...p}
-              ratings={ratings}
-              wished={wishedProducts.includes(p._id)}
-            />
+            <Grid item xs={4} sm={4} lg={3} md={4} key={index}>
+              <ProductBox
+                {...p}
+                ratings={ratings}
+                wished={wishedProducts.includes(p._id)}
+              />
+            </Grid>
           ))}
-      </div>
-    </section>
+      </Grid>
+    </Box>
   )
 }

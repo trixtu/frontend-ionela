@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -102,11 +103,12 @@ export default function ProductBox({
     <ThemeProvider theme={theme}>
       <article className="mb-4 overflow-hidden rounded-sm border max-w-[300px] min-w-full  text-gray-700 shadow-md duration-500 ease-in-out hover:shadow-xl relative">
         <Link className="" href={'/product/' + _id}>
-          <div className="relative max-w-[300px] h-48  mx-2 mt-2 flex items-center justify-center text-center">
+          <div className="relative h-48  mx-2 mt-2 flex items-center justify-center text-center">
             <img
               src={images[0]}
               alt={title}
-              className="object-fill w-full h-[194px] rounded-sm"
+              className="object-fill w-full h-full rounded-sm"
+              loading="lazy"
             />
           </div>
           <button
