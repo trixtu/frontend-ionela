@@ -12,7 +12,8 @@ import { mongooseConnect } from '@/lib/mongoose'
 import ProductBox from '@/components/ui/product-box'
 import { authOptions } from './api/auth/[...nextauth]'
 import { WhischedProduct } from '@/models/WischedProduct'
-import { Box, Grid, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Tab, Tabs, Typography } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 import Breadcrumb from '@/components/ui/breadcrumb'
 
 function a11yProps(index) {
@@ -60,8 +61,8 @@ export default function Shop({
   return (
     <Layout>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <Grid container spacing={2}>
-        <Grid item xs={2}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 12 }}>
+        <Grid item xs={4} sm={3}>
           <Box sx={{ backgroundColor: 'white' }}>
             <Tabs
               orientation="vertical"
@@ -90,7 +91,7 @@ export default function Shop({
           </Box>
         </Grid>
         {/* tab panel */}
-        <Grid item xs={10}>
+        <Grid item xs={4} sm={9}>
           {mainCategories.map((cat, index) => (
             <TabPanel key={cat._id} value={value} index={index}>
               <div className="flex items-center justify-between bg-[#25c2a0] px-3">
@@ -106,18 +107,21 @@ export default function Shop({
                   Show all
                 </Link>
               </div>
-              <section className="flex flex-col">
-                <div className="grid items-center gap-x-8 p-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {categoriesProducts[cat._id].map((p) => (
+              <Grid
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+              >
+                {categoriesProducts[cat._id].map((p, index) => (
+                  <Grid xs={4} sm={4} md={4} key={index}>
                     <ProductBox
-                      key={p._id}
                       {...p}
                       wished={wishedNewProducts.includes(p._id)}
                       ratings={ratings}
                     />
-                  ))}
-                </div>
-              </section>
+                  </Grid>
+                ))}
+              </Grid>
             </TabPanel>
           ))}
         </Grid>
