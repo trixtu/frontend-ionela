@@ -7,7 +7,7 @@ export default function ProductImages({ images }) {
 
   return (
     <>
-      <div className="w-full h-[350px] relative">
+      <div className="w-full h-[380px] relative">
         <img
           src={activeImage}
           alt=""
