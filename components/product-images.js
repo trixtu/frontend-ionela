@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -7,14 +8,11 @@ export default function ProductImages({ images }) {
   return (
     <>
       <div className="w-full h-[350px] relative">
-        <Image
+        <img
           src={activeImage}
           alt=""
-          fill={true}
-          objectFit="contain"
-          placeholder="empty"
-          priority
-          loading="eager"
+          loading="lazy"
+          className="w-full rounded-sm object-contain h-full"
         />
       </div>
       <div className="flex gap-4 flex-grow-0 mt-2">
