@@ -15,6 +15,7 @@ import Input from '@/components/ui/Input'
 import { useForm } from 'react-hook-form'
 import { data } from 'autoprefixer'
 import { GpsFixed, Search } from '@mui/icons-material'
+import Grid from '@mui/material/Unstable_Grid2'
 
 const apiKey = process.env.GMAP_API_KEY
 const mapApiJs = 'https://maps.googleapis.com/maps/api/js'
@@ -177,8 +178,8 @@ export default function CartPage() {
     <Layout>
       <Breadcrumb breadcrumbs={breadcrumbs} />
       <div className="min-h-screen ">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-8">
+        <Grid container spacing={2} columns={16}>
+          <Grid xs={16} md={11}>
             <Paper variant="outlined">
               {!cartItems?.length && (
                 <div className="p-4">Your cart is empty!</div>
@@ -330,9 +331,9 @@ export default function CartPage() {
                 </>
               )}
             </Paper>
-          </div>
+          </Grid>
           {!!cartItems?.length && (
-            <div className="col-span-4">
+            <Grid xs={16} md={5}>
               <Paper variant="outlined">
                 <form onSubmit={handleSubmit(goToPayment)}>
                   <div className="p-4">
@@ -467,9 +468,9 @@ export default function CartPage() {
                   </div>
                 </form>
               </Paper>
-            </div>
+            </Grid>
           )}
-        </div>
+        </Grid>
       </div>
     </Layout>
   )

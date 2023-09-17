@@ -10,7 +10,7 @@ import EmailIcon from '@mui/icons-material/Email'
 
 export default function TopNavBar() {
   return (
-    <div className="bg-[#25c2a0] text-white">
+    <div className="bg-[#25c2a0] border-b-2 border-textGold">
       <div className="px-2 mx-auto max-w-7xl py-1 sm:px-6 lg:px-8">
         <Grid container spacing={1} columns={16}>
           <Grid item xs={8}>

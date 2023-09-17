@@ -136,7 +136,6 @@ export default function ProductBox({
               variant="overline"
               component={'h3'}
               lineHeight={2}
-              fontFamily={'cursive'}
               fontWeight="500"
               color={'#222'}
               overflow={'hidden'}
