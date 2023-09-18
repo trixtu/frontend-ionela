@@ -61,8 +61,13 @@ export default function Shop({
   return (
     <Layout>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 12 }}>
-        <Grid item xs={4} sm={3}>
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 12 }}
+        px={2}
+      >
+        <Grid xs={4} sm={3}>
           <Box sx={{ backgroundColor: 'white' }}>
             <Tabs
               orientation="vertical"
@@ -91,7 +96,7 @@ export default function Shop({
           </Box>
         </Grid>
         {/* tab panel */}
-        <Grid item xs={4} sm={9}>
+        <Grid xs={4} sm={9}>
           {mainCategories.map((cat, index) => (
             <TabPanel key={cat._id} value={value} index={index}>
               <div className="flex items-center justify-between bg-[#25c2a0] px-3">
@@ -111,6 +116,7 @@ export default function Shop({
                 container
                 spacing={{ xs: 2, md: 3 }}
                 columns={{ xs: 4, sm: 8, md: 12 }}
+                p={2}
               >
                 {categoriesProducts[cat._id].map((p, index) => (
                   <Grid xs={4} sm={4} md={4} key={index}>

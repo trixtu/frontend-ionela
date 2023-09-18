@@ -119,7 +119,7 @@ export default function AccountPage() {
       <Breadcrumb breadcrumbs={breadcrumbs} />
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-12 px-4 md:col-span-8">
-          <Paper>
+          <Paper variant="outlined">
             <div className="p-4">
               <section className="flex flex-col px-4 bg-white">
                 <div className="grid items-center gap-x-8 p-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 lg:p-0">

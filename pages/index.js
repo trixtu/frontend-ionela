@@ -7,10 +7,16 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]'
 import { WhischedProduct } from '@/models/WischedProduct'
 import { Review } from '@/models/Review'
+import { Slider } from '@/models/Slider'
 
-export default function HomePage({ products, wishedNewProducts, ratings }) {
+export default function HomePage({
+  products,
+  wishedNewProducts,
+  ratings,
+  slider,
+}) {
   return (
-    <Layout>
+    <Layout slider={slider}>
       <NewProducts
         products={products}
         wishedProducts={wishedNewProducts}
@@ -22,6 +28,8 @@ export default function HomePage({ products, wishedNewProducts, ratings }) {
 
 export async function getServerSideProps(ctx) {
   await mongooseConnect()
+  const id = '65089fd9df4de10e9a43c43b'
+  const slider = await Slider.findById(id)
   const products = await Product.find({}, null, {
     sort: { _id: -1 },
     limit: 10,
@@ -44,6 +52,7 @@ export async function getServerSideProps(ctx) {
 
   return {
     props: {
+      slider: JSON.parse(JSON.stringify(slider)),
       products: JSON.parse(JSON.stringify(products)),
       ratings: JSON.parse(JSON.stringify(ratings)),
       wishedNewProducts: wishedNewProducts.map((i) => i.product.toString()),

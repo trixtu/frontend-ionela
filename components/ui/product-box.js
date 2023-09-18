@@ -6,7 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import { CartContext } from '@/context/CartContext'
 import axios from 'axios'
 import Image from 'next/image'
-import { Box, Button, Rating, Typography } from '@mui/material'
+import { Box, Button, CardMedia, Rating, Typography } from '@mui/material'
 import { toast } from 'react-toastify'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import StarIcon from '@mui/icons-material/Star'
@@ -24,17 +24,6 @@ const labels = {
   4.5: 'Excellent',
   5: 'Excellent+',
 }
-
-const theme = createTheme({
-  palette: {
-    green: {
-      main: '#25c2a0',
-      light: '#16e5b9',
-      dark: '#099b7c',
-      contrastText: '#042b23',
-    },
-  },
-})
 
 export default function ProductBox({
   ratings,
@@ -100,108 +89,114 @@ export default function ProductBox({
   if (value >= 4.6 && value <= 4.9) value = 5
 
   return (
-    <ThemeProvider theme={theme}>
-      <article className="mb-4 overflow-hidden rounded-sm border max-w-[300px] min-w-full  text-gray-700 shadow-md duration-500 ease-in-out hover:shadow-xl relative">
-        <Link className="" href={'/product/' + _id}>
-          <div className="relative h-48  mx-2 mt-2 flex items-center justify-center text-center">
+    <article className="mb-4 overflow-hidden rounded-sm border max-w-[300px] min-w-full  text-gray-700 shadow-md duration-500 ease-in-out hover:shadow-xl relative">
+      <Link className="" href={'/product/' + _id}>
+        <CardMedia
+          component="div"
+          sx={{
+            // 16:9
+            pt: '70%',
+          }}
+          image={images[0]}
+        />
+        {/* <div className="relative h-48  mx-2 mt-2 flex items-center justify-center text-center">
             <img
               src={images[0]}
               alt={title}
               className="object-fill w-full h-full rounded-sm"
               loading="lazy"
             />
-          </div>
-          <button
-            className="absolute top-0 right-0 mt-2 rounded-full px-2 text-center text-sm font-medium text-textGold"
-            onClick={addToWishlist}
+          </div> */}
+        <button
+          className="absolute top-0 right-0 mt-2 rounded-full px-2 text-center text-sm font-medium text-textGold"
+          onClick={addToWishlist}
+        >
+          {isWished ? (
+            <FavoriteIcon fontSize="medium" />
+          ) : (
+            <FavoriteBorderIcon fontSize="medium" />
+          )}
+        </button>
+      </Link>
+
+      <div className="p-2 ">
+        <div className="grid grid-cols-12 gap-2">
+          {off !== 0 ? (
+            <span className="flex items-center justify-center col-span-3 text-center w-full shadow-md text-[12px] text-textGold rounded-sm border border-textGold">
+              -{off}%
+            </span>
+          ) : null}
+
+          <Typography
+            className="col-span-9"
+            variant="overline"
+            component={'h3'}
+            lineHeight={2}
+            fontWeight="500"
+            color={'#222'}
+            overflow={'hidden'}
+            textOverflow={'ellipsis'}
+            height={22}
+            whiteSpace={'nowrap'}
           >
-            {isWished ? (
-              <FavoriteIcon fontSize="medium" />
-            ) : (
-              <FavoriteBorderIcon fontSize="medium" />
-            )}
-          </button>
-        </Link>
+            <Link href={'/product/' + _id}>{title}</Link>
+          </Typography>
+        </div>
 
-        <div className="p-2 ">
-          <div className="grid grid-cols-12 gap-2">
-            {off !== 0 ? (
-              <span className="flex items-center justify-center col-span-3 text-center w-full shadow-md text-[12px] text-textGold rounded-sm border border-textGold">
-                -{off}%
-              </span>
-            ) : null}
-
-            <Typography
-              className="col-span-9"
-              variant="overline"
-              component={'h3'}
-              lineHeight={2}
-              fontWeight="500"
-              color={'#222'}
-              overflow={'hidden'}
-              textOverflow={'ellipsis'}
-              height={22}
-              whiteSpace={'nowrap'}
+        <ul className="m-0 flex list-none items-center justify-between px-0 pt-6 pb-1 w-full">
+          <li className="text-left flex items-center gap-2 justify-between">
+            {sale && <p className="m-0 text-lg font-bold">{sale} RON</p>}
+            <span
+              className={
+                sale
+                  ? 'text-sm text-gray-800 streichpreis'
+                  : 'm-0 text-lg font-bold'
+              }
             >
-              <Link href={'/product/' + _id}>{title}</Link>
-            </Typography>
-          </div>
-
-          <ul className="m-0 flex list-none items-center justify-between px-0 pt-6 pb-1 w-full">
-            <li className="text-left flex items-center gap-2 justify-between">
-              {sale && <p className="m-0 text-lg font-bold">{sale} RON</p>}
-              <span
-                className={
-                  sale
-                    ? 'text-sm text-gray-800 streichpreis'
-                    : 'm-0 text-lg font-bold'
-                }
-              >
-                {price} RON
-              </span>
-            </li>
-          </ul>
-          <li className="text-left list-none mb-1 w-full">
-            <Box
-              sx={{
-                width: 200,
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <Rating
-                size="small"
-                readOnly
-                value={value}
-                precision={0.5}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              <Box sx={{ ml: 1 }} fontSize={14}>
-                {labels[value]}
-              </Box>
-            </Box>
+              {price} RON
+            </span>
           </li>
-          <Button
-            className="w-full"
-            color="green"
-            variant="contained"
-            size="small"
-            onClick={() => {
-              addProduct(_id),
-                toast.success(
-                  `  ${
-                    cartItems.filter((id) => id === _id).length + 1
-                  } x ${title} in cos`
-                )
+        </ul>
+        <li className="text-left list-none mb-1 w-full">
+          <Box
+            sx={{
+              width: 200,
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            <ShoppingCartIcon fontSize="small" />
-            <span>Adauga in cos</span>
-          </Button>
-        </div>
-      </article>
-    </ThemeProvider>
+            <Rating
+              size="small"
+              readOnly
+              value={value}
+              precision={0.5}
+              emptyIcon={
+                <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
+              }
+            />
+            <Box sx={{ ml: 1 }} fontSize={14}>
+              {labels[value]}
+            </Box>
+          </Box>
+        </li>
+        <Button
+          className="w-full"
+          color="green"
+          variant="contained"
+          size="small"
+          onClick={() => {
+            addProduct(_id),
+              toast.success(
+                `  ${
+                  cartItems.filter((id) => id === _id).length + 1
+                } x ${title} in cos`
+              )
+          }}
+        >
+          <ShoppingCartIcon fontSize="small" />
+          <span>Adauga in cos</span>
+        </Button>
+      </div>
+    </article>
   )
 }

@@ -131,7 +131,7 @@ export default function Navbar() {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? 'bg-textGold text-black font-semibold'
+                              ? 'bg-[#d4af37] text-white font-semibold'
                               : 'text-gray-700 font-semibold hover:bg-green hover:text-gray-700',
                             'rounded-sm px-3 py-2 text-sm font-semibold'
                           )}
