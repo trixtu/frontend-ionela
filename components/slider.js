@@ -95,11 +95,12 @@ export default function SliderHome({ slider }) {
               flexDirection: 'column',
               alignItems: 'flex-start',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
             }}
           >
             <div className="flex flex-col items-center">
-              <div className="flex items-center gap-6 justify-center">
+              <div className="grid sm:flex sm:gap-2 text-center items-center justify-center">
                 <Typography variant="h4" color={'#333'} fontWeight={500}>
                   Totul este in
                 </Typography>
