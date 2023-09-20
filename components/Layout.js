@@ -5,9 +5,7 @@ export default function Layout({ children, slider }) {
   return (
     <div className="min-h-full">
       <Header slider={slider} />
-      <main>
-        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{children}</div>
-      </main>
+      {children}
     </div>
   )
 }

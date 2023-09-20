@@ -12,10 +12,10 @@ export default function Header({ slider }) {
     <>
       <TopNavBar />
       <Navbar />
-      <SliderHome slider={slider} />
-      {/* <header className={router.pathname === '/' ? 'hidden' : 'block'}>
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8"></div>
-      </header> */}
+
+      <header className={router.pathname === '/' ? 'block' : 'hidden'}>
+        <SliderHome slider={slider} />
+      </header>
     </>
   )
 }

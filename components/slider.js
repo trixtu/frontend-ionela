@@ -58,7 +58,7 @@ export default function SliderHome({ slider }) {
             <Grid item lg={8}>
               <CardMedia
                 component="img"
-                image={slider.image[0]}
+                image={slider?.image[0]}
                 alt=""
                 sx={{
                   height: '500px',
@@ -76,7 +76,7 @@ export default function SliderHome({ slider }) {
         <div className="xl:hidden">
           <CardMedia
             component={'img'}
-            image={slider.image[0]}
+            image={slider?.image[0]}
             alt=""
             sx={{
               border: '3px solid #7DAA6A',

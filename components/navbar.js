@@ -1,4 +1,4 @@
-import { Badge, IconButton, Typography } from '@mui/material'
+import { Badge, Container, IconButton, Typography } from '@mui/material'
 import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
 import HomeIcon from '@mui/icons-material/Home'
@@ -89,7 +89,7 @@ export default function Navbar() {
       >
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <Container>
               <div className="flex h-20 items-center justify-between ">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
@@ -224,7 +224,7 @@ export default function Navbar() {
                   </Disclosure.Button>
                 </div>
               </div>
-            </div>
+            </Container>
 
             <Disclosure.Panel className="xl:hidden">
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
