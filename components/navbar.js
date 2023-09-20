@@ -124,16 +124,16 @@ export default function Navbar() {
                     </div>
                   </div>
                   <div className="hidden xl:block">
-                    <div className="ml-10 flex items-baseline space-x-4">
+                    <div className="ml-10 flex items-baseline">
                       {navigation.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? 'bg-[#d4af37] text-white font-semibold'
-                              : 'text-gray-700 font-semibold hover:bg-green hover:text-gray-700',
-                            'rounded-sm px-3 py-2 text-sm font-semibold'
+                              ? 'bg-[#a6cc97] text-gray-900 font-semibold'
+                              : 'text-gray-900 font-semibold hover:bg-[#a6cc97] hover:text-gray-900',
+                            ' px-3 py-4 text-sm font-semibold'
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >

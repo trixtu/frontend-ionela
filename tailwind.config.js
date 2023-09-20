@@ -13,6 +13,7 @@ module.exports = {
         textBlack: '#121212',
         textGold: '#de8a14',
         green: '#cff1df',
+        greenDark: '#619A46',
         greenHell: '#7DAA6A',
         goldHell: '#ffdd6f',
         gold: '#E1C158',
