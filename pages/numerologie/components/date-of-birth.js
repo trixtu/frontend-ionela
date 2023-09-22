@@ -131,6 +131,7 @@ export default function DateOfBirth() {
   function handleCalculate() {
     let lifePath = 0
     const total = sumTag + sumMonth + sumYear
+    console.log(total)
 
     const totalArr = String(total)
       .split('')
@@ -138,7 +139,11 @@ export default function DateOfBirth() {
         return Number(num)
       })
 
-    if (total) {
+    if (total === 22) {
+      lifePath = total
+    } else if (total === 33) {
+      lifePath = total
+    } else {
       const sumTotal = totalArr.reduce(
         (acumulator, currentValue) => acumulator + currentValue,
         0
@@ -223,7 +228,7 @@ export default function DateOfBirth() {
 
         <Grid xs={4}>
           <FormControl fullWidth size="small">
-            <InputLabel id="month">Select a year</InputLabel>
+            <InputLabel id="month">Year</InputLabel>
             <Select
               labelId="month"
               id="month"
@@ -240,18 +245,6 @@ export default function DateOfBirth() {
           </FormControl>
         </Grid>
 
-        {/* <div className="year-picker">
-          <select value={selectedYear} onChange={handleYearChange}>
-            <option value="">Select a year</option>
-            {years.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
-          
-        </div> */}
-
         <Button
           fullWidth
           variant="contained"
@@ -262,10 +255,18 @@ export default function DateOfBirth() {
           Calculate
         </Button>
         {lifePathNumber && (
-          <Typography variant="subtitle1">
-            Your Life Path Number is:
-            <span className="text-2xl font-bold">{lifePathNumber}</span>
-          </Typography>
+          <div className="text-left mt-2">
+            <Typography variant="subtitle1" fontWeight={600}>
+              Life Path Number:
+            </Typography>
+            <Typography variant="subtitle1">
+              {selectedTag + ' ' + selectedMonth.name}
+            </Typography>
+            <Typography variant="subtitle1" fontWeight={500}>
+              Your Life Path Number is:
+              <span className="text-2xl font-bold">{lifePathNumber}</span>
+            </Typography>
+          </div>
         )}
       </Grid>
     </>
