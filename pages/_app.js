@@ -17,6 +17,12 @@ const theme = createTheme({
       dark: '#3E7726',
       contrastText: '#E1C158',
     },
+    gold: {
+      main: '#D4AF37',
+      light: '#E1C158',
+      dark: '#B29700',
+      contrastText: '#333',
+    },
   },
 })
 export default function App({

@@ -1,8 +1,17 @@
 import Layout from '@/components/Layout'
 import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2' // Grid version 2
-import { Box, Container, Typography } from '@mui/material'
+import {
+  Box,
+  Container,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Typography,
+} from '@mui/material'
 import Link from 'next/link'
+import DateOfBirth from './components/date-of-birth'
 
 export default function Numerologie() {
   const numbers = [
@@ -54,7 +63,7 @@ export default function Numerologie() {
     {
       name: 'two',
       href: '/two',
-      src: 'images/numbers/number-2-icon-1.jpg',
+      src: 'images/numbers/pngegg.png',
     },
     {
       name: 'two',
@@ -67,6 +76,13 @@ export default function Numerologie() {
       src: 'images/numbers/3-icon-1.jpg',
     },
   ]
+
+  const [age, setAge] = React.useState('')
+
+  const handleChange = (event) => {
+    setAge(event.target.value)
+  }
+
   return (
     <Layout>
       <Grid container height={220}>
@@ -118,6 +134,27 @@ export default function Numerologie() {
               </Grid>
             ))}
           </Grid>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              backgroundColor: '#EFDF9A',
+              textAlign: 'center',
+              padding: '20px',
+            }}
+          >
+            <Typography variant="h5">Find Your Life Path Number</Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                marginBottom: '20px',
+              }}
+            >
+              Enter your birthdate to calculate your birth path number.
+            </Typography>
+            <DateOfBirth />
+          </Box>
         </div>
       </div>
     </Layout>
