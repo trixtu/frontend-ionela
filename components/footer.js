@@ -1,15 +1,17 @@
 import { Container, Divider, Grid } from '@mui/material'
-
 import React from 'react'
 import MaAbonez from './ui/ma-abonez'
 import ContactMe from './ui/contact-me'
+import TrimiteMesaj from './ui/trimite-mi-mesaj'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
     <div
-      className="bg-cover bg-center h-80 relative"
+      className="bg-cover bg-center h-full w-full"
       style={{
-        backgroundImage: ' url(images/23354d7db9721d4c530850c2b2177e6c.jpg)',
+        backgroundImage:
+          ' url(images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
       }}
     >
       <div
@@ -20,7 +22,7 @@ export default function Footer() {
       />
 
       <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} paddingBottom={4}>
           <Grid item xs={12} md={4}>
             <MaAbonez />
           </Grid>
@@ -28,7 +30,26 @@ export default function Footer() {
             <ContactMe />
           </Grid>
           <Grid item xs={12} md={4}>
-            ssd
+            <TrimiteMesaj />
+          </Grid>
+        </Grid>
+        <Divider />
+        <Grid container spacing={2} paddingBottom={4} marginBottom={2}>
+          <Grid item xs={12} md={6}>
+            <div className="flex gap-4">
+              <Link className="hover:underline" href={'#'}>
+                Politica cookie
+              </Link>
+              <Link className="hover:underline" href={'#'}>
+                Politica de confidențialitate
+              </Link>
+              <Link className="hover:underline" href={'#'}>
+                Termeni și condiții
+              </Link>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={6} textAlign={'right'}>
+            &#169; trixTU
           </Grid>
         </Grid>
       </Container>

@@ -253,7 +253,6 @@ export default function DateOfBirth() {
         </Grid>
 
         <Button
-          fullWidth
           variant="contained"
           color="green"
           disabled={selectedTag && selectedMonth && selectedYear ? false : true}
@@ -275,99 +274,15 @@ export default function DateOfBirth() {
               <Typography variant="subtitle1" fontWeight={500}>
                 Your Life Path Number is:
               </Typography>
-              {lifePathNumber === 1 && (
-                <Link href={'/numerologie/1'}>
-                  <img
-                    src="/images/numbers/icon-1-4.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 2 && (
-                <Link href={'/numerologie/2'}>
-                  <img
-                    src="/images/numbers/number-2-icon-png-3.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 3 && (
-                <Link href={'/numerologie/3'}>
-                  <img
-                    src="/images/numbers/3-icon-3.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 4 && (
-                <Link href={'/numerologie/4'}>
-                  <img
-                    src="/images/numbers/number-4-icon-14.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 5 && (
-                <Link href={'/numerologie/5'}>
-                  <img
-                    src="/images/numbers/5-icon-4.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 6 && (
-                <Link href={'/numerologie/6'}>
-                  <img
-                    src="/images/numbers/6-icon-8.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 7 && (
-                <Link href={'/numerologie/7'}>
-                  <img
-                    src="/images/numbers/7-icon-4.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 8 && (
-                <Link href={'/numerologie/8'}>
-                  <img
-                    src="/images/numbers/icon-8-2.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 9 && (
-                <Link href={'/numerologie/9'}>
-                  <img
-                    src="/images/numbers/icon-9-11.jpg"
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              )}
-              {lifePathNumber === 11 && <p>11</p>}
-              {lifePathNumber === 22 && <p>22</p>}
-              {lifePathNumber === 33 && <p>33</p>}
+              <div
+                className="rounded-full w-12 h-12 text-center justify-center flex items-center bg-cover bg-center font-bold text-white"
+                style={{
+                  backgroundImage:
+                    ' url(images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
+                }}
+              >
+                {lifePathNumber}
+              </div>
             </div>
           </>
         )}

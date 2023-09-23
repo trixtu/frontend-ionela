@@ -18,62 +18,62 @@ export default function Numerologie() {
     {
       name: 'one',
       href: '/numerologie/1',
-      src: 'images/numbers/icon-1-4.jpg',
+      value: 1,
     },
     {
       name: 'two',
       href: '/numerologie/2',
-      src: 'images/numbers/number-2-icon-png-3.jpg',
+      value: 2,
     },
     {
       name: 'three',
       href: '/numerologie/3',
-      src: 'images/numbers/3-icon-3.jpg',
+      value: 3,
     },
     {
       name: 'four',
       href: '/numerologie/4',
-      src: 'images/numbers/number-4-icon-14.jpg',
+      value: 4,
     },
     {
       name: 'five',
       href: '/numerologie/5',
-      src: 'images/numbers/5-icon-4.jpg',
+      value: 5,
     },
     {
       name: 'six',
       href: '/numerologie/6',
-      src: 'images/numbers/6-icon-8.jpg',
+      value: 6,
     },
     {
       name: 'seven',
       href: '/numerologie/7',
-      src: 'images/numbers/7-icon-4.jpg',
+      value: 7,
     },
     {
       name: 'eight',
       href: '/numerologie/8',
-      src: 'images/numbers/icon-8-2.jpg',
+      value: 8,
     },
     {
       name: 'nine',
       href: '/numerologie/9',
-      src: 'images/numbers/icon-9-11.jpg',
+      value: 9,
     },
     {
       name: 'eleven',
       href: '/numerologie/11',
-      src: 'images/numbers/pngegg.png',
+      value: 11,
     },
     {
       name: 'twenty-two',
       href: '/numerologie/22',
-      src: 'images/numbers/number-2-icon-1.jpg',
+      value: 22,
     },
     {
       name: 'thirty-three',
       href: '/numerologie/33',
-      src: 'images/numbers/3-icon-1.jpg',
+      value: 33,
     },
   ]
 
@@ -131,11 +131,22 @@ export default function Numerologie() {
           >
             Numerology: Your Life Path Number
           </Typography>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} marginBottom={2}>
             {numbers.map((number, index) => (
               <Grid key={index} xs={3} md={2}>
-                <Link href={number.href}>
-                  <img src={number.src} alt={number.name} />
+                <Link
+                  href={number.href}
+                  className="flex items-center justify-center"
+                >
+                  <div
+                    className="rounded-full w-12 h-12 text-center justify-center flex items-center bg-cover bg-center font-bold text-white"
+                    style={{
+                      backgroundImage:
+                        ' url(images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
+                    }}
+                  >
+                    {number.value}
+                  </div>
                 </Link>
               </Grid>
             ))}
