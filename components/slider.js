@@ -5,6 +5,7 @@ import {
   Container,
   Grid,
   Hidden,
+  Paper,
   Typography,
 } from '@mui/material'
 import Link from 'next/link'
@@ -14,30 +15,36 @@ import React from 'react'
 
 export default function SliderHome({ slider }) {
   return (
-    <Box
-      sx={{
-        position: 'relative',
-      }}
-    >
-      <CardMedia
-        component={'img'}
-        image={slider?.image[0]}
-        alt=""
+    <Container>
+      <Paper
+        variant="outlined"
         sx={{
-          maxHeight: '600px',
-          objectFit: 'fill',
+          marginTop: 4,
+          marginBottom: 4,
         }}
-      />
-      <div className="absolute bottom-20 right-20  flex-col gap-2 hidden md:flex">
-        <Button href={'/numerologie'} variant="contained" color="gold">
-          Numerologie
-          <ChevronRight size={20} />
-        </Button>
-        <Button href={'#'} variant="contained" color="gold">
-          Consiliere pentru dezvoltare personala
-          <ChevronRight size={20} />
-        </Button>
-      </div>
-    </Box>
+      >
+        <div className="md:flex items-center justify-between">
+          <CardMedia
+            component={'img'}
+            image={slider?.image[0]}
+            alt=""
+            sx={{
+              width: '400px',
+              padding: 1,
+            }}
+          />
+          <div className="flex flex-col mr-8 gap-3">
+            <Button href={'/numerologie'} variant="contained" color="green">
+              Numerologie
+              <ChevronRight size={20} />
+            </Button>
+            <Button href={'#'} variant="contained" color="green">
+              Consiliere pentru dezvoltare personala
+              <ChevronRight size={20} />
+            </Button>
+          </div>
+        </div>
+      </Paper>
+    </Container>
   )
 }

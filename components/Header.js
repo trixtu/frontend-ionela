@@ -13,7 +13,7 @@ export default function Header({ slider }) {
       <TopNavBar />
       <Navbar />
 
-      <header className={router.pathname === '/' ? 'block' : 'hidden'}>
+      <header className={router.pathname === '/' ? 'block h-80' : 'hidden'}>
         <SliderHome slider={slider} />
       </header>
     </>
