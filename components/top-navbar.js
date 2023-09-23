@@ -11,7 +11,7 @@ import EmailIcon from '@mui/icons-material/Email'
 export default function TopNavBar() {
   return (
     <div
-      className="bg-greenHell border-b-2 border-gold text-[#fff6c9] bg-cover"
+      className="text-[#fff6c9] bg-cover"
       style={{
         backgroundImage:
           ' url(images/360_F_101044570_T9unk816eB6uiN0J29omibuDfzDkpxu9.jpg)',
@@ -46,6 +46,12 @@ export default function TopNavBar() {
           </Grid>
         </Grid>
       </Container>
+      <div
+        className="bg-contain  h-[5px]"
+        style={{
+          backgroundImage: ' url(images/53f3ee01b5165a2abdd4c6d8d9123119.jpg)',
+        }}
+      />
     </div>
   )
 }

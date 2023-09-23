@@ -34,11 +34,11 @@ export default function SliderHome({ slider }) {
             }}
           />
           <div className="flex flex-col mr-8 gap-3">
-            <Button href={'/numerologie'} variant="contained" color="green">
+            <Button href={'/numerologie'} variant="contained" color="gold">
               Numerologie
               <ChevronRight size={20} />
             </Button>
-            <Button href={'#'} variant="contained" color="green">
+            <Button href={'#'} variant="contained" color="gold">
               Consiliere pentru dezvoltare personala
               <ChevronRight size={20} />
             </Button>

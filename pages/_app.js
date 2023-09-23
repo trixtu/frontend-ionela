@@ -12,15 +12,15 @@ import { ThemeProvider, createTheme } from '@mui/material'
 const theme = createTheme({
   palette: {
     green: {
-      main: '#438029',
+      main: '#6bc588',
       light: '#7DAA6A',
-      dark: '#3E7726',
-      contrastText: '#E1C158',
+      dark: '#539b6b',
+      contrastText: '#333',
     },
     gold: {
-      main: '#D4AF37',
-      light: '#E1C158',
-      dark: '#B29700',
+      main: '#f0ba27',
+      light: '#edbe3e',
+      dark: '#f0ba27',
       contrastText: '#333',
     },
   },
