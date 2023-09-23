@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   Box,
   Button,
@@ -9,6 +10,7 @@ import {
 } from '@mui/material'
 import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2' // Grid version 2
+import Link from 'next/link'
 
 const tags = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
@@ -76,6 +78,8 @@ export default function DateOfBirth() {
   const [selectedMonth, setSelectedMonth] = React.useState('')
   const [selectedYear, setSelectedYear] = React.useState('')
   const [lifePathNumber, setLifePathNumber] = React.useState('')
+
+  let test = null
 
   const handleChangeTag = (event) => {
     setSelectedTag(event.target.value)
@@ -187,6 +191,9 @@ export default function DateOfBirth() {
       >
         Life Path - Calculator
       </Typography>
+      <Typography variant="h6" textAlign={'left'}>
+        Date of Birth:
+      </Typography>
       <Grid container spacing={2} marginBottom={6}>
         <Grid xs={2}>
           <FormControl fullWidth size="small">
@@ -255,18 +262,114 @@ export default function DateOfBirth() {
           Calculate
         </Button>
         {lifePathNumber && (
-          <div className="text-left mt-2">
-            <Typography variant="subtitle1" fontWeight={600}>
-              Life Path Number:
-            </Typography>
-            <Typography variant="subtitle1">
-              {selectedTag + ' ' + selectedMonth.name}
-            </Typography>
-            <Typography variant="subtitle1" fontWeight={500}>
-              Your Life Path Number is:
-              <span className="text-2xl font-bold">{lifePathNumber}</span>
-            </Typography>
-          </div>
+          <>
+            {/* <div className="text-left mt-2">
+              <Typography variant="subtitle1" fontWeight={600}>
+                Life Path Number:
+              </Typography>
+              <Typography variant="subtitle1">
+                {selectedTag + ' ' + selectedMonth.name}
+              </Typography>
+            </div> */}
+            <div className="w-full flex flex-col items-center justify-center  mt-4">
+              <Typography variant="subtitle1" fontWeight={500}>
+                Your Life Path Number is:
+              </Typography>
+              {lifePathNumber === 1 && (
+                <Link href={'/numerologie/1'}>
+                  <img
+                    src="/images/numbers/icon-1-4.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 2 && (
+                <Link href={'/numerologie/2'}>
+                  <img
+                    src="/images/numbers/number-2-icon-png-3.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 3 && (
+                <Link href={'/numerologie/3'}>
+                  <img
+                    src="/images/numbers/3-icon-3.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 4 && (
+                <Link href={'/numerologie/4'}>
+                  <img
+                    src="/images/numbers/number-4-icon-14.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 5 && (
+                <Link href={'/numerologie/5'}>
+                  <img
+                    src="/images/numbers/5-icon-4.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 6 && (
+                <Link href={'/numerologie/6'}>
+                  <img
+                    src="/images/numbers/6-icon-8.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 7 && (
+                <Link href={'/numerologie/7'}>
+                  <img
+                    src="/images/numbers/7-icon-4.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 8 && (
+                <Link href={'/numerologie/8'}>
+                  <img
+                    src="/images/numbers/icon-8-2.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 9 && (
+                <Link href={'/numerologie/9'}>
+                  <img
+                    src="/images/numbers/icon-9-11.jpg"
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </Link>
+              )}
+              {lifePathNumber === 11 && <p>11</p>}
+              {lifePathNumber === 22 && <p>22</p>}
+              {lifePathNumber === 33 && <p>33</p>}
+            </div>
+          </>
         )}
       </Grid>
     </>

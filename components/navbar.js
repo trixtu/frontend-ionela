@@ -38,7 +38,7 @@ export default function Navbar() {
     },
     {
       name: 'Numerologie',
-      href: 'numerologie',
+      href: '/numerologie',
       current: router.pathname === '/numerologie' && true,
     },
     {
