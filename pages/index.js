@@ -17,11 +17,11 @@ export default function HomePage({
 }) {
   return (
     <Layout slider={slider}>
-      <NewProducts
+      {/* <NewProducts
         products={products}
         wishedProducts={wishedNewProducts}
         ratings={ratings}
-      />
+      /> */}
     </Layout>
   )
 }
