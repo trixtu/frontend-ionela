@@ -87,7 +87,13 @@ export default function Numerologie() {
     <Layout>
       <Grid container height={220}>
         <Grid xs={12} sm={7} md={5}>
-          <div className="bg-[#7DAA6A] h-[220px] min-w-[200px] p-6 flex flex-col items-center justify-center ">
+          <div
+            className="bg-cover h-[220px] min-w-[200px] p-6 flex flex-col items-center justify-center "
+            style={{
+              backgroundImage:
+                ' url(images/360_F_101044570_T9unk816eB6uiN0J29omibuDfzDkpxu9.jpg)',
+            }}
+          >
             <Typography
               variant="h3"
               fontStyle={'oblique'}

@@ -10,7 +10,13 @@ import EmailIcon from '@mui/icons-material/Email'
 
 export default function TopNavBar() {
   return (
-    <div className="bg-greenHell border-b-2 border-gold text-[#fff6c9]">
+    <div
+      className="bg-greenHell border-b-2 border-gold text-[#fff6c9] bg-cover"
+      style={{
+        backgroundImage:
+          ' url(images/360_F_101044570_T9unk816eB6uiN0J29omibuDfzDkpxu9.jpg)',
+      }}
+    >
       <Container className="py-1">
         <Grid container spacing={1} columns={16}>
           <Grid item xs={8}>

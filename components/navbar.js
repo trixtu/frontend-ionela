@@ -131,8 +131,8 @@ export default function Navbar() {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? 'bg-[#a6cc97] text-gray-900 font-semibold'
-                              : 'text-gray-900 font-semibold hover:bg-[#a6cc97] hover:text-gray-900',
+                              ? 'bg-[#67cd89] text-gray-900 font-semibold'
+                              : 'text-gray-900 font-semibold hover:bg-[#67cd89] hover:text-gray-900',
                             ' px-3 py-4 text-sm font-semibold'
                           )}
                           aria-current={item.current ? 'page' : undefined}
