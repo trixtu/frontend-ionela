@@ -4,11 +4,13 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
+  Spinner,
   Text,
   Textarea,
   useToast,
 } from '@chakra-ui/react'
 import { Button } from '@mui/material'
+import { FacebookIcon } from 'lucide-react'
 import React, { useState } from 'react'
 
 const initValues = { name: '', email: '', subject: '', message: '' }
@@ -71,7 +73,7 @@ export default function ContactForm() {
   return (
     <>
       {error && (
-        <Text color={'red.300'} my={4} fontSize={'xl'}>
+        <Text color={'red.600'} my={4} fontSize={'xl'}>
           {error}
         </Text>
       )}
@@ -141,14 +143,9 @@ export default function ContactForm() {
           Acest câmp este obligatoriu.
         </FormErrorMessage>
       </FormControl>
-      <Button
-        variant={'contained'}
-        color="gold"
-        loading={isLoading}
-        loadingIndicator="Loading…"
-        onClick={onSubmit}
-      >
-        Trimite
+      <Button variant={'contained'} color="gold" onClick={onSubmit}>
+        {isLoading && <Spinner size={'xl'} />}
+        Trimitec
       </Button>
     </>
   )

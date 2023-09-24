@@ -1,0 +1,26 @@
+.SearchBarContainer {
+  padding: 0.4rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.CustomSearchBar {
+  display: inline-flex;
+}
+.InputAndResults {
+}
+.Input {
+  width: 100%;
+  color: black;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  margin: 0;
+}
+.Icon {
+  width: 38px;
+  height: 38px;
+  padding: 5px;
+
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
