@@ -12,8 +12,12 @@ import {
 } from '@mui/material'
 import Link from 'next/link'
 import DateOfBirth from './components/date-of-birth'
+import HomeIcon from '@mui/icons-material/Home'
+import { useRouter } from 'next/router'
+import Breadcrumb from '@/components/ui/breadcrumb'
 
 export default function Numerologie() {
+  const router = useRouter()
   const numbers = [
     {
       name: 'one',
@@ -83,97 +87,97 @@ export default function Numerologie() {
     setAge(event.target.value)
   }
 
+  const breadcrumbs = [
+    <Link
+      underline="hover"
+      key="1"
+      color="inherit"
+      href="/"
+      onClick={handleClick}
+    >
+      <div className="flex items-center gap-1">
+        <HomeIcon fontSize="small" />
+        Home
+      </div>
+    </Link>,
+    // <Link
+    //   underline="hover"
+    //   key="2"
+    //   color="inherit"
+    //   href="/material-ui/getting-started/installation/"
+    //   onClick={handleClick}
+    // >
+    //   Core
+    // </Link>,
+    <Typography key="3" color="text.primary">
+      Numerologie
+    </Typography>,
+  ]
+
+  function handleClick(event) {
+    event.preventDefault()
+    router.push('/')
+  }
+
   return (
     <Layout>
-      <Grid container height={220}>
-        <Grid xs={12} sm={7} md={5}>
-          <div
-            className="bg-cover h-[220px] min-w-[200px] p-6 flex flex-col items-center justify-center "
-            style={{
-              backgroundImage:
-                ' url(images/360_F_101044570_T9unk816eB6uiN0J29omibuDfzDkpxu9.jpg)',
-            }}
-          >
+      <Container>
+        <Breadcrumb breadcrumbs={breadcrumbs} />
+        <div className="flex items-center justify-center p-2">
+          <div className="w-[650px] ">
             <Typography
-              variant="h3"
-              fontStyle={'oblique'}
-              color={'#E1C158'}
-              padding={1}
-              sx={{
-                textShadow: '5px 4px 10px #333',
-              }}
+              variant="h5"
+              fontWeight={'500'}
+              textAlign={'center'}
+              marginTop={5}
+              paddingBottom={2}
             >
-              NUMEROLOGY
+              Numerology: Your Life Path Number
             </Typography>
-            <Typography variant="h6" textAlign={'center'}>
-              Birth path number, angel numbers, master numbers and more
-            </Typography>
-          </div>
-        </Grid>
-        <Grid xs={0} sm={5} md={7}>
-          <div className="h-[220px]">
-            <img
-              src="/images/1241723.jpg"
-              className="h-full w-full object-cover"
-              alt=""
-            />
-          </div>
-        </Grid>
-      </Grid>
-      <div className="flex items-center justify-center p-2">
-        <div className="w-[650px] ">
-          <Typography
-            variant="h5"
-            fontWeight={'500'}
-            textAlign={'center'}
-            marginTop={5}
-            paddingBottom={2}
-          >
-            Numerology: Your Life Path Number
-          </Typography>
-          <Grid container spacing={2} marginBottom={2}>
-            {numbers.map((number, index) => (
-              <Grid key={index} xs={3} md={2}>
-                <Link
-                  href={number.href}
-                  className="flex items-center justify-center"
-                >
-                  <div
-                    className="rounded-full w-12 h-12 text-center justify-center flex items-center bg-cover bg-center font-bold text-white"
-                    style={{
-                      backgroundImage:
-                        ' url(images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
-                    }}
+            <Grid container spacing={2} marginBottom={2}>
+              {numbers.map((number, index) => (
+                <Grid key={index} xs={3} md={2}>
+                  <Link
+                    href={number.href}
+                    className="flex items-center justify-center"
                   >
-                    {number.value}
-                  </div>
-                </Link>
-              </Grid>
-            ))}
-          </Grid>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              height: '100%',
-              backgroundColor: '#EFDF9A',
-              textAlign: 'center',
-              padding: '20px',
-            }}
-          >
-            <Typography variant="h5">Find Your Life Path Number</Typography>
-            <Typography
-              variant="subtitle1"
+                    <div
+                      className="rounded-full w-12 h-12 text-center justify-center flex items-center bg-cover bg-center font-bold text-white"
+                      style={{
+                        backgroundImage:
+                          ' url(images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
+                      }}
+                    >
+                      {number.value}
+                    </div>
+                  </Link>
+                </Grid>
+              ))}
+            </Grid>
+            <Box
               sx={{
-                marginBottom: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                backgroundColor: '#EFDF9A',
+                textAlign: 'center',
+                padding: '20px',
               }}
             >
-              Enter your birthdate to calculate your birth path number.
-            </Typography>
-            <DateOfBirth />
-          </Box>
+              <Typography variant="h5">Find Your Life Path Number</Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  marginBottom: '20px',
+                }}
+              >
+                Enter your birthdate to calculate your birth path number.
+              </Typography>
+              <DateOfBirth />
+            </Box>
+          </div>
         </div>
-      </div>
+      </Container>
     </Layout>
   )
 }

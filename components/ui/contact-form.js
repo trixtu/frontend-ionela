@@ -145,7 +145,7 @@ export default function ContactForm() {
       </FormControl>
       <Button variant={'contained'} color="gold" onClick={onSubmit}>
         {isLoading && <Spinner size={'xl'} />}
-        Trimitec
+        Trimite
       </Button>
     </>
   )

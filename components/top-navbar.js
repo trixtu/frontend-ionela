@@ -14,7 +14,7 @@ export default function TopNavBar() {
       className="text-[#fff6c9] bg-cover"
       style={{
         backgroundImage:
-          ' url(images/360_F_101044570_T9unk816eB6uiN0J29omibuDfzDkpxu9.jpg)',
+          ' url(/images/360_F_101044570_T9unk816eB6uiN0J29omibuDfzDkpxu9.jpg)',
       }}
     >
       <Container className="py-1">
@@ -49,7 +49,7 @@ export default function TopNavBar() {
       <div
         className="bg-contain  h-[5px]"
         style={{
-          backgroundImage: ' url(images/53f3ee01b5165a2abdd4c6d8d9123119.jpg)',
+          backgroundImage: ' url(/images/53f3ee01b5165a2abdd4c6d8d9123119.jpg)',
         }}
       />
     </div>
