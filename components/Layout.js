@@ -4,10 +4,10 @@ import Footer from './footer'
 
 export default function Layout({ children, slider }) {
   return (
-    <div className="min-h-full">
+    <main className="min-h-full">
       <Header slider={slider} />
       {children}
       <Footer />
-    </div>
+    </main>
   )
 }
