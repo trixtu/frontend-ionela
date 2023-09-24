@@ -199,10 +199,15 @@ export default function Navbar() {
                     <Link href={'/cart'}>
                       <IconButton
                         aria-label="cart"
-                        className="text-textBlack bg-transparent hover:bg-transparent hover:text-textGold"
+                        className="text-textBlack bg-transparent "
                       >
-                        <Badge badgeContent={cartItems.length} color="warning">
-                          <ShoppingCartIcon fontSize="large" />
+                        <Badge badgeContent={cartItems.length} color="error">
+                          <img
+                            src="/images/cart.png"
+                            alt=""
+                            width={30}
+                            height={30}
+                          />
                         </Badge>
                       </IconButton>
                     </Link>

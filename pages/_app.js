@@ -8,6 +8,7 @@ import '@fontsource/roboto/700.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { ThemeProvider, createTheme } from '@mui/material'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const theme = createTheme({
   palette: {
@@ -31,14 +32,16 @@ export default function App({
 }) {
   return (
     <div>
-      <ThemeProvider theme={theme}>
-        <SessionProvider session={session}>
-          <CartContextProvider>
-            <Component {...pageProps} />
-            <ToastContainer />
-          </CartContextProvider>
-        </SessionProvider>
-      </ThemeProvider>
+      <ChakraProvider>
+        <ThemeProvider theme={theme}>
+          <SessionProvider session={session}>
+            <CartContextProvider>
+              <Component {...pageProps} />
+              <ToastContainer />
+            </CartContextProvider>
+          </SessionProvider>
+        </ThemeProvider>
+      </ChakraProvider>
     </div>
   )
 }

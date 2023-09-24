@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <div
-      className="bg-cover bg-center h-full w-full"
+      className="bg-cover bg-top h-full w-full"
       style={{
         backgroundImage:
           ' url(images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
@@ -35,7 +35,7 @@ export default function Footer() {
         </Grid>
         <Divider />
         <Grid container spacing={2} paddingBottom={4} marginBottom={2}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={11}>
             <div className="flex gap-4">
               <Link className="hover:underline" href={'#'}>
                 Politica cookie
@@ -48,7 +48,7 @@ export default function Footer() {
               </Link>
             </div>
           </Grid>
-          <Grid item xs={12} md={6} textAlign={'right'}>
+          <Grid item xs={12} md={1} textAlign={'center'}>
             &#169; trixTU
           </Grid>
         </Grid>
