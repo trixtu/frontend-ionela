@@ -135,7 +135,6 @@ export default function DateOfBirth() {
   function handleCalculate() {
     let lifePath = 0
     const total = sumTag + sumMonth + sumYear
-    console.log(total)
 
     const totalArr = String(total)
       .split('')

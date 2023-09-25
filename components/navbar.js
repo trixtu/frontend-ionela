@@ -46,6 +46,11 @@ export default function Navbar() {
       current: router.pathname === '/numerologie' && true,
     },
     {
+      name: 'Matricea Numerologica',
+      href: '/numerologie/matricea-numerologica',
+      current: router.pathname === '/numerologie/matricea-numerologica' && true,
+    },
+    {
       name: 'Consiliere Dezvoltare Personala',
       href: '/consiliere',
       current: router.pathname === '/consiliere' && true,
