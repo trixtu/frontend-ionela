@@ -152,7 +152,66 @@ export default function MatriceaNumerologica() {
 
   const matriceDataNastere = `${selectedTag}.${selectedMonth}.${selectedYear}.${primulNumarOperativ}${alDoileaNumarOperativ}${alTreileaNumarOperativ}${alPatruleaNumarOperativ}`
 
-  console.log(matriceDataNastere)
+  const matrice =
+    selectedTag +
+    selectedMonth +
+    selectedYear +
+    primulNumarOperativ +
+    alDoileaNumarOperativ +
+    alTreileaNumarOperativ +
+    alPatruleaNumarOperativ
+
+  const matriceArr = String(matrice)
+    .split('')
+    .map((num) => {
+      return Number(num)
+    })
+
+  const counts = {}
+  matriceArr.forEach(function (x) {
+    counts[x] = (counts[x] || 0) + 1
+  })
+
+  let arrUnu = []
+  let arrDoi = []
+  let arrTrei = []
+  let arrPatru = []
+  let arrCinci = []
+  let arrSase = []
+  let arrSapte = []
+  let arrOpt = []
+  let arrNoua = []
+
+  if (counts[1] > 0) {
+    arrUnu = Array(counts[1]).fill(1)
+  }
+  if (counts[2] > 0) {
+    arrDoi = Array(counts[2]).fill(2)
+  }
+  if (counts[3] > 0) {
+    arrTrei = Array(counts[3]).fill(3)
+  }
+  if (counts[4] > 0) {
+    arrPatru = Array(counts[4]).fill(4)
+  }
+  if (counts[5] > 0) {
+    arrCinci = Array(counts[5]).fill(5)
+  }
+  if (counts[6] > 0) {
+    arrSase = Array(counts[6]).fill(6)
+  }
+  if (counts[7] > 0) {
+    arrSapte = Array(counts[7]).fill(7)
+  }
+  if (counts[8] > 0) {
+    arrOpt = Array(counts[8]).fill(8)
+  }
+  if (counts[9] > 0) {
+    arrNoua = Array(counts[9]).fill(9)
+  }
+
+  console.log(arrCinci)
+  console.log(arrUnu, arrDoi)
 
   return (
     <Layout>
@@ -236,6 +295,53 @@ export default function MatriceaNumerologica() {
           </Button>
         </div>
         {matriceDataNastere && <p>{matriceDataNastere}</p>}
+        <Grid container>
+          <Grid>
+            <div className="bg-red-400 p-4">
+              {arrUnu && arrUnu.map((unu) => <>1</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-yellow-400 p-4">
+              {arrDoi && arrDoi.map((doi) => <>2</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-greenDark p-4">
+              {arrTrei && arrTrei.map((trei) => <>3</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-slate-500 p-4">
+              {arrPatru && arrPatru.map((patru) => <>4</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-neutral-500 p-4">
+              {arrCinci.length > 0 && arrCinci.map((cinci) => <>5</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-greenDark p-4">
+              {arrSase && arrSase.map((sase) => <>6</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-greenDark p-4">
+              {arrSapte && arrSapte.map((sapte) => <>7</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-yellow-400 p-4">
+              {arrOpt && arrOpt.map((opt) => <>8</>)}{' '}
+            </div>
+          </Grid>
+          <Grid>
+            <div className="bg-greenDark p-4">
+              {arrNoua && arrNoua.map((noua) => <>9</>)}{' '}
+            </div>
+          </Grid>
+        </Grid>
       </Container>
     </Layout>
   )
