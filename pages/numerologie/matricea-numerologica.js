@@ -9,7 +9,7 @@ import {
   MenuItem,
   Select,
 } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 
 const tags = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
@@ -75,6 +75,15 @@ export default function MatriceaNumerologica() {
   const [selectedTag, setSelectedTag] = React.useState('')
   const [selectedMonth, setSelectedMonth] = React.useState('')
   const [selectedYear, setSelectedYear] = React.useState('')
+  const [matriceUnu, setMatriceUnu] = useState(null)
+  const [matriceDoi, setMatriceDoi] = useState(null)
+  const [matriceTrei, setMatriceTrei] = useState(null)
+  const [matricePatru, setMatricePatru] = useState(null)
+  const [matriceCinci, setMatriceCinci] = useState(null)
+  const [matriceSase, setMatriceSase] = useState(null)
+  const [matriceSapte, setMatriceSapte] = useState(null)
+  const [matriceOpt, setMatriceOpt] = useState(null)
+  const [matriceNoua, setMatriceNoua] = useState(null)
 
   const handleChangeTag = (event) => {
     setSelectedTag(event.target.value)
@@ -122,96 +131,125 @@ export default function MatriceaNumerologica() {
     0
   )
 
-  const primulNumarOperativ = sumTag + sumMonth + sumYear
+  function handleCalculMatrice() {
+    if (selectedTag && selectedMonth && selectedYear) {
+      const primulNumarOperativ = sumTag + sumMonth + sumYear
+      const alDoileaNumarOperativArr = String(primulNumarOperativ)
+        .split('')
+        .map((num) => {
+          return Number(num)
+        })
 
-  const alDoileaNumarOperativArr = String(primulNumarOperativ)
-    .split('')
-    .map((num) => {
-      return Number(num)
-    })
+      const alDoileaNumarOperativ = alDoileaNumarOperativArr.reduce(
+        (acumulator, currentValue) => acumulator + currentValue,
+        0
+      )
 
-  const alDoileaNumarOperativ = alDoileaNumarOperativArr.reduce(
-    (acumulator, currentValue) => acumulator + currentValue,
-    0
-  )
+      const numarZiOriDoi = tagArr[0] * 2
 
-  const numarZiOriDoi = tagArr[0] * 2
+      const alTreileaNumarOperativ = primulNumarOperativ - numarZiOriDoi
 
-  const alTreileaNumarOperativ = primulNumarOperativ - numarZiOriDoi
+      const alPatruleaNumarOperativArr = String(alTreileaNumarOperativ)
+        .split('')
+        .map((num) => {
+          return Number(num)
+        })
 
-  const alPatruleaNumarOperativArr = String(alTreileaNumarOperativ)
-    .split('')
-    .map((num) => {
-      return Number(num)
-    })
+      const alPatruleaNumarOperativ = alPatruleaNumarOperativArr.reduce(
+        (acumulator, currentValue) => acumulator + currentValue,
+        0
+      )
+      if (
+        primulNumarOperativ &&
+        alDoileaNumarOperativ &&
+        alTreileaNumarOperativ &&
+        alPatruleaNumarOperativ
+      ) {
+        const matrice =
+          selectedTag +
+          selectedMonth +
+          selectedYear +
+          primulNumarOperativ +
+          alDoileaNumarOperativ +
+          alTreileaNumarOperativ +
+          alPatruleaNumarOperativ
 
-  const alPatruleaNumarOperativ = alPatruleaNumarOperativArr.reduce(
-    (acumulator, currentValue) => acumulator + currentValue,
-    0
-  )
+        const matriceArr = String(matrice)
+          .split('')
+          .map((num) => {
+            return Number(num)
+          })
 
-  const matriceDataNastere = `${selectedTag}.${selectedMonth}.${selectedYear}.${primulNumarOperativ}${alDoileaNumarOperativ}${alTreileaNumarOperativ}${alPatruleaNumarOperativ}`
+        const counts = {}
+        matriceArr.forEach(function (x) {
+          counts[x] = (counts[x] || 0) + 1
+        })
 
-  const matrice =
-    selectedTag +
-    selectedMonth +
-    selectedYear +
-    primulNumarOperativ +
-    alDoileaNumarOperativ +
-    alTreileaNumarOperativ +
-    alPatruleaNumarOperativ
+        if (counts[1] > 0) {
+          const unu = Array(counts[1]).fill(1)
+          setMatriceUnu(unu)
+        } else {
+          setMatriceUnu(null)
+        }
 
-  const matriceArr = String(matrice)
-    .split('')
-    .map((num) => {
-      return Number(num)
-    })
+        if (counts[2] > 0) {
+          const doi = Array(counts[2]).fill(2)
+          setMatriceDoi(doi)
+        } else {
+          setMatriceDoi(null)
+        }
 
-  const counts = {}
-  matriceArr.forEach(function (x) {
-    counts[x] = (counts[x] || 0) + 1
-  })
+        if (counts[3] > 0) {
+          const trei = Array(counts[3]).fill(3)
+          setMatriceTrei(trei)
+        } else {
+          setMatriceTrei(null)
+        }
 
-  let arrUnu = []
-  let arrDoi = []
-  let arrTrei = []
-  let arrPatru = []
-  let arrCinci = []
-  let arrSase = []
-  let arrSapte = []
-  let arrOpt = []
-  let arrNoua = []
+        if (counts[4] > 0) {
+          const patru = Array(counts[4]).fill(4)
+          setMatricePatru(patru)
+        } else {
+          setMatricePatru(null)
+        }
 
-  if (counts[1] > 0) {
-    arrUnu = Array(counts[1]).fill(1)
+        if (counts[5] > 0) {
+          const cinci = Array(counts[5]).fill(5)
+          setMatriceCinci(cinci)
+        } else {
+          setMatriceCinci(null)
+        }
+
+        if (counts[6] > 0) {
+          const sase = Array(counts[6]).fill(6)
+          setMatriceSase(sase)
+        } else {
+          setMatriceSase(null)
+        }
+
+        if (counts[7] > 0) {
+          const sapte = Array(counts[7]).fill(7)
+          setMatriceSapte(sapte)
+        } else {
+          setMatriceSapte(null)
+        }
+
+        if (counts[8] > 0) {
+          const opt = Array(counts[8]).fill(8)
+          setMatriceOpt(opt)
+        } else {
+          setMatriceOpt(null)
+        }
+
+        if (counts[9] > 0) {
+          const noua = Array(counts[9]).fill(9)
+          setMatriceNoua(noua)
+        } else {
+          setMatriceNoua(null)
+        }
+      }
+    }
   }
-  if (counts[2] > 0) {
-    arrDoi = Array(counts[2]).fill(2)
-  }
-  if (counts[3] > 0) {
-    arrTrei = Array(counts[3]).fill(3)
-  }
-  if (counts[4] > 0) {
-    arrPatru = Array(counts[4]).fill(4)
-  }
-  if (counts[5] > 0) {
-    arrCinci = Array(counts[5]).fill(5)
-  }
-  if (counts[6] > 0) {
-    arrSase = Array(counts[6]).fill(6)
-  }
-  if (counts[7] > 0) {
-    arrSapte = Array(counts[7]).fill(7)
-  }
-  if (counts[8] > 0) {
-    arrOpt = Array(counts[8]).fill(8)
-  }
-  if (counts[9] > 0) {
-    arrNoua = Array(counts[9]).fill(9)
-  }
-
-  console.log(arrCinci)
-  console.log(arrUnu, arrDoi)
 
   return (
     <Layout>
@@ -290,58 +328,74 @@ export default function MatriceaNumerologica() {
               </Grid>
             </Grid>
           </Grid>
-          <Button variant="contained" color="gold">
+          <Button
+            variant="contained"
+            color="gold"
+            onClick={handleCalculMatrice}
+          >
             Calculeaza Acum
           </Button>
         </div>
-        {matriceDataNastere && <p>{matriceDataNastere}</p>}
-        <Grid container>
-          <Grid>
-            <div className="bg-red-400 p-4">
-              {arrUnu && arrUnu.map((unu) => <>1</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-yellow-400 p-4">
-              {arrDoi && arrDoi.map((doi) => <>2</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-greenDark p-4">
-              {arrTrei && arrTrei.map((trei) => <>3</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-slate-500 p-4">
-              {arrPatru && arrPatru.map((patru) => <>4</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-neutral-500 p-4">
-              {arrCinci.length > 0 && arrCinci.map((cinci) => <>5</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-greenDark p-4">
-              {arrSase && arrSase.map((sase) => <>6</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-greenDark p-4">
-              {arrSapte && arrSapte.map((sapte) => <>7</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-yellow-400 p-4">
-              {arrOpt && arrOpt.map((opt) => <>8</>)}{' '}
-            </div>
-          </Grid>
-          <Grid>
-            <div className="bg-greenDark p-4">
-              {arrNoua && arrNoua.map((noua) => <>9</>)}{' '}
-            </div>
-          </Grid>
-        </Grid>
+        <div className="mt-4 mb-4">
+          <table className="table-bordered table-2 matrice">
+            <tbody>
+              <tr className="flex">
+                <td className="w-32 border bg-red-300 flex flex-col items-center p-3">
+                  <b className="text-xl">{matriceUnu ? matriceUnu : <br />}</b>
+                  <span className="uppercase">Caracter</span>
+                </td>
+                <td className="w-32 p-3 border bg-[#fedc99]  flex flex-col items-center">
+                  <b className="text-xl">
+                    {matricePatru ? matricePatru : <br />}
+                  </b>
+                  <span className="uppercase">SĂNĂTATE</span>
+                </td>
+                <td className=" w-28 border bg-[#ebfbdc] p-3 flex flex-col items-center">
+                  <b className="text-xl">
+                    {matriceSapte ? matriceSapte : <br />}
+                  </b>
+                  <span className="uppercase">Talent</span>
+                </td>
+              </tr>
+              <tr className="flex min-w-60">
+                <td className="w-32 border bg-[#d3f3fe] p-3 flex flex-col items-center">
+                  <b className="text-xl">{matriceDoi ? matriceDoi : <br />}</b>
+                  <span className="uppercase">ENERGIE</span>
+                </td>
+                <td className="w-32 border bg-red-300 p-3 flex flex-col items-center">
+                  <b className="text-xl">
+                    {matriceCinci ? matriceCinci : <br />}
+                  </b>
+                  <span className="uppercase">INTUIȚIE</span>
+                </td>
+                <td className="w-28 border bg-[#fedc99] p-3 flex flex-col items-center">
+                  <b className="text-xl">{matriceOpt ? matriceOpt : <br />}</b>
+                  <span className="uppercase">Datoria</span>
+                </td>
+              </tr>
+              <tr className="flex">
+                <td className="w-32 border bg-[#ebfbdc] p-3 flex flex-col items-center">
+                  <b className="text-xl">
+                    {matriceTrei ? matriceTrei : <br />}
+                  </b>
+                  <span className="uppercase">Memorie</span>
+                </td>
+                <td className="w-32 border bg-[#d3f3fe] p-3 flex flex-col items-center">
+                  <b className="text-xl">
+                    {matriceSase ? matriceSase : <br />}
+                  </b>
+                  <span className="uppercase">SIMȚ PRACTIC</span>
+                </td>
+                <td className="w-28 border bg-red-300 p-3 flex flex-col items-center">
+                  <b className="text-xl">
+                    {matriceNoua ? matriceNoua : <br />}
+                  </b>
+                  <span className="uppercase">MENTAL</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </Container>
     </Layout>
   )
