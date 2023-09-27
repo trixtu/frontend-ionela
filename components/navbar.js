@@ -1,5 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { Badge, Container, IconButton, Typography } from '@mui/material'
+import {
+  Badge,
+  Container,
+  Divider,
+  IconButton,
+  Typography,
+} from '@mui/material'
 import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
 import HomeIcon from '@mui/icons-material/Home'
@@ -16,16 +22,38 @@ import { useRouter } from 'next/router'
 import Search from './ui/search'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import Grid from '@mui/material/Unstable_Grid2'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import { motion } from 'framer-motion'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function Navbar() {
-  //const [current, setCurrent] = useState(false)
-
   const { cartItems } = useContext(CartContext)
   const { data: session } = useSession()
   const router = useRouter()
+
+  const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        duration: 0.5,
+      },
+      display: 'block',
+    },
+    exit: {
+      opacity: 0,
+      rotateX: -15,
+      transition: {
+        duration: 0.5,
+        delay: 0.3,
+      },
+      transitionEnd: {
+        display: 'none',
+      },
+    },
+  }
 
   const user = {
     name: session?.user?.name,
@@ -43,12 +71,23 @@ export default function Navbar() {
     {
       name: 'Numerologie',
       href: '/numerologie',
-      current: router.pathname === '/numerologie' && true,
-    },
-    {
-      name: 'Matricea Numerologica',
-      href: '/numerologie/matricea-numerologica',
-      current: router.pathname === '/numerologie/matricea-numerologica' && true,
+      current:
+        (router.pathname === '/numerologie/matricea-numerologica' && true) ||
+        (router.pathname === '/numerologie' && true),
+
+      submenu: [
+        {
+          name: 'Cifra destinului',
+          href: '/numerologie',
+          current: router.pathname === '/numerologie' && true,
+        },
+        {
+          name: 'Matricea Numerologica',
+          href: '/numerologie/matricea-numerologica',
+          current:
+            router.pathname === '/numerologie/matricea-numerologica' && true,
+        },
+      ],
     },
     {
       name: 'Consiliere Dezvoltare Personala',
@@ -432,22 +471,43 @@ export default function Navbar() {
           </>
         )}
       </Disclosure>
-      <div className="hidden xl:flex items-center justify-center border-b ">
-        <div className="ml-10 flex items-baseline">
+      <div className="hidden xl:flex items-center justify-center border-b bg-white sticky top-[71px] z-10 shadow">
+        <div className="ml-10 flex items-baseline nav__menu">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={classNames(
-                item.current
-                  ? 'bg-[#67cd89] text-gray-900 font-semibold'
-                  : 'text-gray-900 font-semibold hover:bg-[#67cd89] hover:text-gray-900',
-                ' px-3 py-2 text-sm font-semibold'
+            <li key={item.name} className="nav__menu-item list-none relative">
+              <Link
+                href={item.href}
+                className={classNames(
+                  item.current
+                    ? 'bg-[#67cd89] text-gray-900 font-semibold'
+                    : 'text-gray-900 font-semibold hover:bg-[#67cd89] hover:text-gray-900',
+                  ' px-3 py-[5px] text-sm font-semibold '
+                )}
+                aria-current={item.current ? 'page' : undefined}
+              >
+                {item.name}
+                {item.submenu && <KeyboardArrowDownIcon />}
+              </Link>
+              {item.submenu && (
+                <ul className="nav__submenu absolute border w-[300px] px-2 py-2 shadow-lg rounded-sm bg-white z-20">
+                  {item.submenu.map((submenu, index) => (
+                    <Link key={index} href={submenu.href}>
+                      <li
+                        className={classNames(
+                          submenu.current
+                            ? ' text-[#46915f] font-semibold'
+                            : 'text-gray-900 font-semibold hover:text-[#46915f]',
+                          'px-1 text-sm font-semibold nav__submenu-item py-1 '
+                        )}
+                      >
+                        {submenu.name}
+                      </li>
+                      <Divider />
+                    </Link>
+                  ))}
+                </ul>
               )}
-              aria-current={item.current ? 'page' : undefined}
-            >
-              {item.name}
-            </Link>
+            </li>
           ))}
         </div>
       </div>

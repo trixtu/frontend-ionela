@@ -8,8 +8,13 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Typography,
 } from '@mui/material'
+import Link from 'next/link'
 import React, { useState } from 'react'
+import HomeIcon from '@mui/icons-material/Home'
+import Breadcrumb from '@/components/ui/breadcrumb'
+import { useRouter } from 'next/router'
 
 const tags = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
@@ -72,6 +77,8 @@ const years = Array.from(
   (_, index) => new Date().getFullYear() - index
 )
 export default function MatriceaNumerologica() {
+  const router = useRouter()
+
   const [selectedTag, setSelectedTag] = React.useState('')
   const [selectedMonth, setSelectedMonth] = React.useState('')
   const [selectedYear, setSelectedYear] = React.useState('')
@@ -95,6 +102,42 @@ export default function MatriceaNumerologica() {
     setSelectedYear(event.target.value)
   }
 
+  const breadcrumbs = [
+    <Link
+      underline="hover"
+      key="1"
+      color="inherit"
+      href="/"
+      onClick={handleClick}
+    >
+      <div className="flex items-center gap-1">
+        <HomeIcon fontSize="small" />
+        Home
+      </div>
+    </Link>,
+    <Link
+      underline="hover"
+      key="2"
+      color="inherit"
+      href="/material-ui/getting-started/installation/"
+      onClick={handleClickNumerogie}
+    >
+      Numerologie
+    </Link>,
+    <Typography key="3" color="text.primary">
+      Matricea Numerologica
+    </Typography>,
+  ]
+
+  function handleClick(event) {
+    event.preventDefault()
+    router.push('/')
+  }
+
+  function handleClickNumerogie(event) {
+    event.preventDefault()
+    router.push('/numerologie')
+  }
   ///Year////////////
   const yearArr = String(selectedYear)
     .split('')
@@ -120,6 +163,7 @@ export default function MatriceaNumerologica() {
   )
 
   //--month--//
+
   const monthArr = String(selectedMonth)
     .split('')
     .map((num) => {
@@ -254,6 +298,7 @@ export default function MatriceaNumerologica() {
   return (
     <Layout>
       <Container>
+        <Breadcrumb breadcrumbs={breadcrumbs} />
         <Heading>Matricea Numerologica</Heading>
         <div className="bg-neutral-200 mt-4 p-6 border">
           <Grid container>
