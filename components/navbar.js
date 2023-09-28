@@ -32,6 +32,7 @@ export default function Navbar() {
   const { cartItems } = useContext(CartContext)
   const { data: session } = useSession()
   const router = useRouter()
+  const [toggle, setToggle] = useState([])
 
   const subMenuAnimate = {
     enter: {
@@ -70,22 +71,40 @@ export default function Navbar() {
     },
     {
       name: 'Numerologie',
-      href: '/numerologie',
+      href: '',
       current:
         (router.pathname === '/numerologie/matricea-numerologica' && true) ||
         (router.pathname === '/numerologie' && true),
 
       submenu: [
         {
-          name: 'Cifra destinului',
+          name: 'Ce este numerologia?',
+          href: '/numerologie/ce-este-numerologia',
+          current:
+            router.pathname === '/numerologie/ce-este-numerologia' && true,
+        },
+        {
+          name: 'Consultatii numerologice 1:1',
+          href: '/numerologie/consultatii-numerologice',
+          current:
+            router.pathname === '/numerologie/consultatii-numerologice' && true,
+        },
+        {
+          name: 'Cifra destinului (calculator)',
           href: '/numerologie',
           current: router.pathname === '/numerologie' && true,
         },
         {
-          name: 'Matricea Numerologica',
+          name: 'Matricea Numerologica (calculator)',
           href: '/numerologie/matricea-numerologica',
           current:
             router.pathname === '/numerologie/matricea-numerologica' && true,
+        },
+        {
+          name: 'Analiza personalizata',
+          href: '/numerologie/analiza-personalizata',
+          current:
+            router.pathname === '/numerologie/analiza-personalizata' && true,
         },
       ],
     },
@@ -128,6 +147,16 @@ export default function Navbar() {
           href: session?.user ? '#' : '/auth/login',
         },
       ]
+
+  const clickHandler = (i) => {
+    let tempToggle = [...toggle]
+    if (tempToggle[i]) {
+      tempToggle[i] = false
+    } else {
+      tempToggle[i] = true
+    }
+    setToggle(tempToggle)
+  }
 
   return (
     <>
@@ -406,23 +435,45 @@ export default function Navbar() {
             </Container>
 
             {/* mobile menu */}
-            <Disclosure.Panel className="xl:hidden">
+
+            <Disclosure.Panel className="xl:hidden h-[400px] overflow-y-scroll">
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3 bg-gray-300">
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-gray-800 text-white'
-                        : 'text-black hover:bg-gray-700 hover:text-white',
-                      'block rounded-md px-3 py-2 text-base font-medium'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
+                {navigation.map((item, i) => (
+                  <div key={item.name}>
+                    <Disclosure.Button
+                      as="a"
+                      onClick={item.submenu && clickHandler}
+                      href={item?.href}
+                      className={classNames(
+                        item.current
+                          ? 'bg-gray-800 text-white'
+                          : 'text-black hover:bg-gray-700 hover:text-white',
+                        'block rounded-md px-3 py-2 text-base font-medium'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                      {item.submenu && <KeyboardArrowDownIcon />}
+                    </Disclosure.Button>
+                    {item.submenu
+                      ? item.submenu.map((submenu, index) => (
+                          <Disclosure.Button
+                            key={index}
+                            as="a"
+                            href={submenu.href}
+                            className={classNames(
+                              submenu.current
+                                ? ' text-greenDark'
+                                : 'text-black hover:bg-gray-700 hover:text-white',
+                              'block rounded-md px-10 py-2 text-base font-medium'
+                            )}
+                            aria-current={submenu.current ? 'page' : undefined}
+                          >
+                            {submenu.name}
+                          </Disclosure.Button>
+                        ))
+                      : null}
+                  </div>
                 ))}
               </div>
               {/* user menu mobile */}
@@ -476,7 +527,7 @@ export default function Navbar() {
           {navigation.map((item) => (
             <li key={item.name} className="nav__menu-item list-none relative">
               <Link
-                href={item.href}
+                href={item?.href}
                 className={classNames(
                   item.current
                     ? 'bg-[#67cd89] text-gray-900 font-semibold'
@@ -486,7 +537,7 @@ export default function Navbar() {
                 aria-current={item.current ? 'page' : undefined}
               >
                 {item.name}
-                {item.submenu && <KeyboardArrowDownIcon />}
+                {item.submenu && <KeyboardArrowDownIcon fontSize="small" />}
               </Link>
               {item.submenu && (
                 <ul className="nav__submenu absolute border w-[300px] px-2 py-2 shadow-lg rounded-sm bg-white z-20">

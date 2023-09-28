@@ -8,6 +8,7 @@ import { authOptions } from './api/auth/[...nextauth]'
 import { WhischedProduct } from '@/models/WischedProduct'
 import { Review } from '@/models/Review'
 import { Slider } from '@/models/Slider'
+import Head from 'next/head'
 
 export default function HomePage({
   products,
@@ -17,6 +18,9 @@ export default function HomePage({
 }) {
   return (
     <Layout slider={slider}>
+      <Head>
+        <title>Home</title>
+      </Head>
       {/* <NewProducts
         products={products}
         wishedProducts={wishedNewProducts}

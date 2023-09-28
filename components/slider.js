@@ -35,6 +35,10 @@ export default function SliderHome({ slider }) {
           />
           <div className="flex flex-col mr-8 gap-3">
             <Button href={'/numerologie'} variant="contained" color="gold">
+              Calculator numerologic
+              <ChevronRight size={20} />
+            </Button>
+            <Button href={'/numerologie'} variant="contained" color="gold">
               Numerologie
               <ChevronRight size={20} />
             </Button>
