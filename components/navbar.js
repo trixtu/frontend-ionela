@@ -251,7 +251,7 @@ export default function Navbar() {
                     <Menu as="div" className="relative ml-3 hidden xl:block">
                       <div>
                         <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                          <span className="absolute -inset-1.5" />
+                          <span className="absolute -inset-1.5 " />
                           <span className="sr-only">Open user menu</span>
                           <img
                             className="h-8 w-8 rounded-full"
@@ -269,7 +269,7 @@ export default function Navbar() {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Menu.Items className="absolute right-0 z-20 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           {userNavigation.map((item, index) => (
                             <Menu.Item key={index}>
                               {({ active }) => (
@@ -522,7 +522,7 @@ export default function Navbar() {
           </>
         )}
       </Disclosure>
-      <div className="hidden xl:flex items-center justify-center border-b bg-white sticky top-[71px] z-10 shadow">
+      <div className="hidden xl:flex items-center justify-center border-b bg-white sticky top-[71px] z-100 shadow">
         <div className="ml-10 flex items-baseline nav__menu">
           {navigation.map((item) => (
             <li key={item.name} className="nav__menu-item list-none relative">
@@ -540,7 +540,7 @@ export default function Navbar() {
                 {item.submenu && <KeyboardArrowDownIcon fontSize="small" />}
               </Link>
               {item.submenu && (
-                <ul className="nav__submenu absolute border w-[300px] px-2 py-2 shadow-lg rounded-sm bg-white z-20">
+                <ul className="nav__submenu absolute border w-[300px] px-2 py-2 shadow-lg rounded-sm bg-white z-10">
                   {item.submenu.map((submenu, index) => (
                     <Link key={index} href={submenu.href}>
                       <li
