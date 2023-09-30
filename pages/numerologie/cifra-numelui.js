@@ -18,6 +18,7 @@ export default function CifraNumelui() {
   function letterValue(str) {
     var anum = {
       a: 1,
+      A: 1,
       b: 2,
       c: 3,
       d: 4,
@@ -52,8 +53,8 @@ export default function CifraNumelui() {
     let sumPrenumeFinal = 0
     let sumNumeFinal = 0
 
-    const firstNumeArr = letterValue(nume)
-    const firstPrenumeArr = letterValue(prenume)
+    const firstNumeArr = letterValue(nume.toLowerCase())
+    const firstPrenumeArr = letterValue(prenume.toLowerCase())
 
     if (prenume.length > 0 && firstPrenumeArr.length >= 2) {
       const firstSumPrenume = firstPrenumeArr.reduce(
