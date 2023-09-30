@@ -90,9 +90,15 @@ export default function Navbar() {
             router.pathname === '/numerologie/consultatii-numerologice' && true,
         },
         {
+          name: 'Calculator numerologic',
+          href: '/numerologie/calculator-numerologic',
+          current:
+            router.pathname === '/numerologie/consultatii-numerologice' && true,
+        },
+        {
           name: 'Cifra destinului (calculator)',
-          href: '/numerologie',
-          current: router.pathname === '/numerologie' && true,
+          href: '/numerologie/cifra-destinului',
+          current: router.pathname === '/numerologie/cifra-destinului' && true,
         },
         {
           name: 'Matricea Numerologica (calculator)',
@@ -540,7 +546,7 @@ export default function Navbar() {
                 {item.submenu && <KeyboardArrowDownIcon fontSize="small" />}
               </Link>
               {item.submenu && (
-                <ul className="nav__submenu absolute border w-[300px] px-2 py-2 shadow-lg rounded-sm bg-white z-10">
+                <ul className="nav__submenu absolute border w-[300px] px-2 py-2 shadow-lg rounded-sm bg-white z-50">
                   {item.submenu.map((submenu, index) => (
                     <Link key={index} href={submenu.href}>
                       <li

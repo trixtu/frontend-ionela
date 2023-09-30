@@ -277,7 +277,7 @@ export default function DateOfBirth() {
                 className="rounded-full w-12 h-12 text-center justify-center flex items-center bg-cover bg-center font-bold text-white"
                 style={{
                   backgroundImage:
-                    ' url(images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
+                    ' url(/images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
                 }}
               >
                 {lifePathNumber}

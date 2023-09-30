@@ -16,7 +16,7 @@ import HomeIcon from '@mui/icons-material/Home'
 import { useRouter } from 'next/router'
 import Breadcrumb from '@/components/ui/breadcrumb'
 
-export default function Numerologie() {
+export default function CifraDestinului() {
   const router = useRouter()
   const numbers = [
     {
@@ -118,12 +118,64 @@ export default function Numerologie() {
     event.preventDefault()
     router.push('/')
   }
-
   return (
     <Layout>
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        dfdfdf
+        <div className="flex items-center justify-center p-2">
+          <div className="w-[650px] ">
+            <Typography
+              variant="h5"
+              fontWeight={'500'}
+              textAlign={'center'}
+              marginTop={5}
+              paddingBottom={2}
+            >
+              Numerology: Your Life Path Number
+            </Typography>
+            <Grid container spacing={2} marginBottom={2}>
+              {numbers.map((number, index) => (
+                <Grid key={index} xs={3} md={2}>
+                  <Link
+                    href={number.href}
+                    className="flex items-center justify-center"
+                  >
+                    <div
+                      className="rounded-full w-12 h-12 text-center justify-center flex items-center bg-cover bg-center font-bold text-white"
+                      style={{
+                        backgroundImage:
+                          ' url(/images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
+                      }}
+                    >
+                      {number.value}
+                    </div>
+                  </Link>
+                </Grid>
+              ))}
+            </Grid>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                backgroundColor: '#EFDF9A',
+                textAlign: 'center',
+                padding: '20px',
+              }}
+            >
+              <Typography variant="h5">Find Your Life Path Number</Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  marginBottom: '20px',
+                }}
+              >
+                Enter your birthdate to calculate your birth path number.
+              </Typography>
+              <DateOfBirth />
+            </Box>
+          </div>
+        </div>
       </Container>
     </Layout>
   )

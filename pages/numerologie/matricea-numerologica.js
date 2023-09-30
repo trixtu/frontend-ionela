@@ -1,5 +1,11 @@
+import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
 import Layout from '@/components/Layout'
 import { Heading } from '@chakra-ui/react'
+import HomeIcon from '@mui/icons-material/Home'
+import Breadcrumb from '@/components/ui/breadcrumb'
 import {
   Button,
   Container,
@@ -10,12 +16,6 @@ import {
   Select,
   Typography,
 } from '@mui/material'
-import Link from 'next/link'
-import React, { useState } from 'react'
-import HomeIcon from '@mui/icons-material/Home'
-import Breadcrumb from '@/components/ui/breadcrumb'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
 
 const tags = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
@@ -191,9 +191,7 @@ export default function MatriceaNumerologica() {
       )
 
       const numarZiOriDoi = tagArr[0] * 2
-
       const alTreileaNumarOperativ = primulNumarOperativ - numarZiOriDoi
-
       const alPatruleaNumarOperativArr = String(alTreileaNumarOperativ)
         .split('')
         .map((num) => {
