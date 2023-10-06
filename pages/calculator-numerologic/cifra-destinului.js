@@ -11,10 +11,11 @@ import {
   Typography,
 } from '@mui/material'
 import Link from 'next/link'
-import DateOfBirth from './components/date-of-birth'
+
 import HomeIcon from '@mui/icons-material/Home'
 import { useRouter } from 'next/router'
 import Breadcrumb from '@/components/ui/breadcrumb'
+import DateOfBirth from '../numerologie/components/date-of-birth'
 
 export default function CifraDestinului() {
   const router = useRouter()
@@ -100,17 +101,17 @@ export default function CifraDestinului() {
         Home
       </div>
     </Link>,
-    // <Link
-    //   underline="hover"
-    //   key="2"
-    //   color="inherit"
-    //   href="/material-ui/getting-started/installation/"
-    //   onClick={handleClick}
-    // >
-    //   Core
-    // </Link>,
+    <Link
+      underline="hover"
+      key="2"
+      color="inherit"
+      href="/material-ui/getting-started/installation/"
+      onClick={handleClickNumerogie}
+    >
+      Calculator numerologic
+    </Link>,
     <Typography key="3" color="text.primary">
-      Numerologie
+      Cifra destinului
     </Typography>,
   ]
 
@@ -118,6 +119,12 @@ export default function CifraDestinului() {
     event.preventDefault()
     router.push('/')
   }
+
+  function handleClickNumerogie(event) {
+    event.preventDefault()
+    router.push('/calculator-numerologic')
+  }
+
   return (
     <Layout>
       <Container>

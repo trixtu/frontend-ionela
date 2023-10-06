@@ -123,10 +123,10 @@ export default function MatriceaNumerologica() {
       href="/material-ui/getting-started/installation/"
       onClick={handleClickNumerogie}
     >
-      Numerologie
+      Calculator Numerologic
     </Link>,
     <Typography key="3" color="text.primary">
-      Matricea Numerologica
+      Matricea numerologica
     </Typography>,
   ]
 
@@ -137,7 +137,7 @@ export default function MatriceaNumerologica() {
 
   function handleClickNumerogie(event) {
     event.preventDefault()
-    router.push('/numerologie')
+    router.push('/calculator-numerologic')
   }
   ///Year////////////
   const yearArr = String(selectedYear)

@@ -148,10 +148,10 @@ export default function CifraNumelui() {
       href="/material-ui/getting-started/installation/"
       onClick={handleClickNumerogie}
     >
-      Calculator Numerologic
+      Calculator numerologic
     </Link>,
     <Typography key="3" color="text.primary">
-      Cifra Numelui
+      Cifra numelui
     </Typography>,
   ]
 
@@ -162,8 +162,9 @@ export default function CifraNumelui() {
 
   function handleClickNumerogie(event) {
     event.preventDefault()
-    router.push('/numerologie/calculator-numerologic')
+    router.push('/calculator-numerologic')
   }
+
   return (
     <Layout>
       <Head>

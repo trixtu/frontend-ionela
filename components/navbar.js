@@ -67,7 +67,22 @@ export default function Navbar() {
     {
       name: 'Despre mine',
       href: '/despre-mine',
-      current: router.pathname === '/despre-mine' && true,
+      current:
+        (router.pathname === '/despre-mine' && true) ||
+        (router.pathname === '/despre-mine/cine-sunt-eu' && true) ||
+        (router.pathname === '/despre-mine/trairile-elei' && true),
+      submenu: [
+        {
+          name: 'Cine sunt eu?',
+          href: '/despre-mine/cine-sunt-eu',
+          current: router.pathname === '/despre-mine/cine-sunt-eu' && true,
+        },
+        {
+          name: 'Trairile Elei',
+          href: '/despre-mine/trairile-elei',
+          current: router.pathname === '/despre-mine/trairile-elei' && true,
+        },
+      ],
     },
     {
       name: 'Numerologie',
@@ -90,24 +105,7 @@ export default function Navbar() {
             router.pathname === '/numerologie/consultatii-numerologice' && true,
         },
         {
-          name: 'Calculator numerologic',
-          href: '/numerologie/calculator-numerologic',
-          current:
-            router.pathname === '/numerologie/consultatii-numerologice' && true,
-        },
-        {
-          name: 'Cifra destinului (calculator)',
-          href: '/numerologie/cifra-destinului',
-          current: router.pathname === '/numerologie/cifra-destinului' && true,
-        },
-        {
-          name: 'Matricea Numerologica (calculator)',
-          href: '/numerologie/matricea-numerologica',
-          current:
-            router.pathname === '/numerologie/matricea-numerologica' && true,
-        },
-        {
-          name: 'Analiza personalizata',
+          name: 'Analiza numerologica personalizata (prezentare scrisa)',
           href: '/numerologie/analiza-personalizata',
           current:
             router.pathname === '/numerologie/analiza-personalizata' && true,
@@ -115,7 +113,40 @@ export default function Navbar() {
       ],
     },
     {
-      name: 'Consiliere Dezvoltare Personala',
+      name: 'Calculator numerologic',
+      href: '/calculator-numerologic',
+      current:
+        (router.pathname === '/calculator-numerologic' && true) ||
+        (router.pathname === '/calculator-numerologic/cifra-destinului' &&
+          true) ||
+        (router.pathname === '/calculator-numerologic/matricea-numerologica' &&
+          true) ||
+        (router.pathname === '/calculator-numerologic/cifra-numelui' && true),
+      submenu: [
+        {
+          name: 'Cifra destinului',
+          href: '/calculator-numerologic/cifra-destinului',
+          current:
+            router.pathname === '/calculator-numerologic/cifra-destinului' &&
+            true,
+        },
+        {
+          name: 'Matricea Numerologica',
+          href: '/calculator-numerologic/matricea-numerologica',
+          current:
+            router.pathname ===
+              '/calculator-numerologic/matricea-numerologica' && true,
+        },
+        {
+          name: 'Cifra numelui',
+          href: '/calculator-numerologic/cifra-numelui',
+          current:
+            router.pathname === '/calculator-numerologic/cifra-numelui' && true,
+        },
+      ],
+    },
+    {
+      name: 'Consiliere dezvoltare personala',
       href: '/consiliere',
       current: router.pathname === '/consiliere' && true,
     },
@@ -125,7 +156,7 @@ export default function Navbar() {
       current: router.pathname === '/blog' && true,
     },
     {
-      name: 'Shop',
+      name: 'Magazin online',
       href: '/shop',
       current: router.pathname === '/shop' && true,
     },
