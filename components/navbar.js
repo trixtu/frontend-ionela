@@ -69,13 +69,13 @@ export default function Navbar() {
       href: '/despre-mine',
       current:
         (router.pathname === '/despre-mine' && true) ||
-        (router.pathname === '/despre-mine/cine-sunt-eu' && true) ||
+        (router.pathname === '/despre-mine/cine-sunt' && true) ||
         (router.pathname === '/despre-mine/trairile-elei' && true),
       submenu: [
         {
-          name: 'Cine sunt eu?',
-          href: '/despre-mine/cine-sunt-eu',
-          current: router.pathname === '/despre-mine/cine-sunt-eu' && true,
+          name: 'Cine sunt?',
+          href: '/despre-mine/cine-sunt',
+          current: router.pathname === '/despre-mine/cine-sunt' && true,
         },
         {
           name: 'Trairile Elei',
