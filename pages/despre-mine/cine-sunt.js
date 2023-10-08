@@ -69,9 +69,7 @@ export default function CineSunt() {
           }}
           height={400}
           borderTopRadius={4}
-        >
-          sdsd
-        </Box>
+        />
         <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
           <Markup content={textCineSunt?.value} />
         </Paper>
