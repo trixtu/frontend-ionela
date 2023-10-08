@@ -20,7 +20,7 @@ import { useSession, signOut, signIn } from 'next-auth/react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import Search from './ui/search'
-import { Box, SimpleGrid } from '@chakra-ui/react'
+import { Avatar, Box, SimpleGrid } from '@chakra-ui/react'
 import Grid from '@mui/material/Unstable_Grid2'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { motion } from 'framer-motion'
@@ -290,10 +290,10 @@ export default function Navbar() {
                         <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="absolute -inset-1.5 " />
                           <span className="sr-only">Open user menu</span>
-                          <img
-                            className="h-8 w-8 rounded-full"
+                          <Avatar
                             src={user.imageUrl}
-                            alt=""
+                            width="30px"
+                            height="30px"
                           />
                         </Menu.Button>
                       </div>

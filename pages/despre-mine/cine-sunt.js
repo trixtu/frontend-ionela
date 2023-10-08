@@ -11,11 +11,19 @@ import { Box } from '@chakra-ui/react'
 
 export default function CineSunt() {
   const [textareas, setTextareas] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    axios.get('/api/textarea').then((response) => {
-      setTextareas(response.data)
-    })
+    try {
+      setLoading(true)
+      axios.get('/api/textarea').then((response) => {
+        setTextareas(response.data)
+      })
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
   }, [])
 
   const id = '65211c86bf2032dcd63eed49'
@@ -57,22 +65,28 @@ export default function CineSunt() {
       </Head>
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        <Typography variant="h5" mb={2}>
-          {textCineSunt?.title}
-        </Typography>
-        <Box
-          style={{
-            backgroundImage: `url(${textCineSunt?.image[0]})`,
-            backgroundPosition: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-          }}
-          height={400}
-          borderTopRadius={4}
-        />
-        <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
-          <Markup content={textCineSunt?.value} />
-        </Paper>
+        {loading ? (
+          <p>loading...</p>
+        ) : (
+          <>
+            <Typography variant="h5" mb={2}>
+              {textCineSunt?.title}
+            </Typography>
+            <Box
+              style={{
+                backgroundImage: `url(${textCineSunt?.image[0]})`,
+                backgroundPosition: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+              }}
+              height={400}
+              borderTopRadius={4}
+            />
+            <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
+              <Markup content={textCineSunt?.value} />
+            </Paper>
+          </>
+        )}
       </Container>
     </Layout>
   )
