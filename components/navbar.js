@@ -62,7 +62,7 @@ export default function Navbar() {
     { name: 'Acasa', href: '/', current: router.pathname === '/' && true },
     {
       name: 'Despre mine',
-      href: '/despre-mine',
+      href: '',
       current:
         (router.pathname === '/despre-mine' && true) ||
         (router.pathname === '/despre-mine/cine-sunt' && true) ||
@@ -110,7 +110,7 @@ export default function Navbar() {
     },
     {
       name: 'Calculator numerologic',
-      href: '/calculator-numerologic',
+      href: '',
       current:
         (router.pathname === '/calculator-numerologic' && true) ||
         (router.pathname === '/calculator-numerologic/cifra-destinului' &&

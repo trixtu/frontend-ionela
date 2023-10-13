@@ -10,18 +10,15 @@ import { Markup } from 'interweave'
 
 export default function TrairileElei() {
   const [textareas, setTextareas] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const id = '65268cb75603464a39337d4e'
   let trairileElei = null
 
   useEffect(() => {
-    try {
-      axios.get('/api/textarea').then((response) => {
-        setTextareas(response.data)
-      })
-    } catch (error) {
-      console.log(error)
-    }
+    axios.get('/api/textarea').then((response) => {
+      setTextareas(response.data)
+    })
   }, [])
 
   if (textareas) {
@@ -69,7 +66,6 @@ export default function TrairileElei() {
             backgroundSize: 'cover',
           }}
           height={400}
-          borderTopRadius={4}
         />
         <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
           {trairileElei && <Markup content={trairileElei?.value} />}

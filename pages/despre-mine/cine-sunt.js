@@ -12,23 +12,22 @@ import { useRouter } from 'next/router'
 
 export default function CineSunt() {
   const [textareas, setTextareas] = useState([])
-  const [text, setText] = useState(null)
   const [loading, setLoading] = useState(false)
 
   const router = useRouter()
+  let textCineSunt = null
 
   const id = '65211c86bf2032dcd63eed49'
 
   useEffect(() => {
-    try {
-      axios.get('/api/textarea').then((response) => {
-        setTextareas(response.data)
-      })
-    } catch (error) {
-      console.log(error)
-    }
+    axios.get('/api/textarea').then((response) => {
+      setTextareas(response.data)
+    })
   }, [])
-  const textCineSunt = textareas.find((text) => text._id === id)
+
+  if (textareas) {
+    textCineSunt = textareas.find((text) => text._id === id)
+  }
 
   const breadcrumbs = [
     <Link
@@ -53,12 +52,6 @@ export default function CineSunt() {
     router.push('/')
   }
 
-  function handleClickNumerogie(event) {
-    event.preventDefault()
-    router.push('/calculator-numerologic')
-  }
-
-  console.log(loading)
   return (
     <Layout>
       <Head>
@@ -84,7 +77,7 @@ export default function CineSunt() {
               borderTopRadius={4}
             />
             <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
-              <Markup content={textCineSunt?.value} />
+              {textCineSunt && <Markup content={textCineSunt?.value} />}
             </Paper>
           </>
         )}
