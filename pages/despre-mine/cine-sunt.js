@@ -1,14 +1,14 @@
-import Layout from '@/components/Layout'
-import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
-import { Container, Paper, Typography } from '@mui/material'
-import Link from 'next/link'
-import HomeIcon from '@mui/icons-material/Home'
-import Breadcrumb from '@/components/ui/breadcrumb'
 import axios from 'axios'
+import Head from 'next/head'
+import Link from 'next/link'
 import { Markup } from 'interweave'
-import { Box, Skeleton } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import Layout from '@/components/Layout'
+import HomeIcon from '@mui/icons-material/Home'
+import React, { useEffect, useState } from 'react'
+import Breadcrumb from '@/components/ui/breadcrumb'
+import { Container, Paper, Typography } from '@mui/material'
 
 export default function CineSunt() {
   const [textareas, setTextareas] = useState([])
