@@ -1,15 +1,14 @@
 const EXTERNAL_DATA_URL = 'https://www.numerologie-consiliere.ro'
 
 function generateSiteMap(posts) {
+  console.log(posts)
   return `<?xml version="1.0" encoding="UTF-8"?>
-   <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <sitemap>
-       <loc>https://www.numerologie-consiliere.ro/sitemap_pages_1.xml</loc>
-     </sitemap>
-     <sitemap>
-       <loc>https://www.numerologie-consiliere.ro/sitemap_collections_1.xml</loc>
-     </sitemap>
-   </sitemapindex>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://www.numerologie-consiliere.ro</loc>
+        <lastmod>2023-10-09T14:38:45-04:00</lastmod>
+    </url>
+   </urlset>
  `
 }
 

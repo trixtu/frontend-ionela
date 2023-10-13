@@ -51,7 +51,7 @@ export default function TrairileElei() {
   return (
     <Layout>
       <Head>
-        <title>Cine sunt? | Numerologie</title>
+        <title>{trairileElei?.title} | Numerologie</title>
       </Head>
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
