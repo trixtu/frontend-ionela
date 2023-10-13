@@ -7,23 +7,19 @@ import {
   Typography,
 } from '@mui/material'
 import Link from 'next/link'
-import React, { useContext, useEffect, useState } from 'react'
-import HomeIcon from '@mui/icons-material/Home'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '@/context/CartContext'
 import { X } from 'lucide-react'
-import { AlignJustify, BellIcon } from 'lucide-react'
+import { AlignJustify } from 'lucide-react'
 import { Fragment } from 'react'
-import SearchIcon from '@mui/icons-material/Search'
-import { useSession, signOut, signIn } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import Search from './ui/search'
-import { Avatar, Box, SimpleGrid } from '@chakra-ui/react'
+import { Avatar } from '@chakra-ui/react'
 import Grid from '@mui/material/Unstable_Grid2'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { motion } from 'framer-motion'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -73,12 +69,12 @@ export default function Navbar() {
         (router.pathname === '/despre-mine/trairile-elei' && true),
       submenu: [
         {
-          name: 'Cine sunt?',
+          name: 'Cine sunt eu?',
           href: '/despre-mine/cine-sunt',
           current: router.pathname === '/despre-mine/cine-sunt' && true,
         },
         {
-          name: 'Trairile Elei',
+          name: 'TrairileElei',
           href: '/despre-mine/trairile-elei',
           current: router.pathname === '/despre-mine/trairile-elei' && true,
         },
@@ -150,16 +146,16 @@ export default function Navbar() {
       href: '/consiliere',
       current: router.pathname === '/consiliere' && true,
     },
-    {
-      name: 'Blog',
-      href: '/blog',
-      current: router.pathname === '/blog' && true,
-    },
-    {
-      name: 'Magazin online',
-      href: '/shop',
-      current: router.pathname === '/shop' && true,
-    },
+    // {
+    //   name: 'Blog',
+    //   href: '/blog',
+    //   current: router.pathname === '/blog' && true,
+    // },
+    // {
+    //   name: 'Magazin online',
+    //   href: '/shop',
+    //   current: router.pathname === '/shop' && true,
+    // },
     {
       name: 'Contact',
       href: '/contact',

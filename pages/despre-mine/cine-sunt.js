@@ -7,27 +7,27 @@ import HomeIcon from '@mui/icons-material/Home'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import axios from 'axios'
 import { Markup } from 'interweave'
-import { Box } from '@chakra-ui/react'
+import { Box, Skeleton } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 
 export default function CineSunt() {
   const [textareas, setTextareas] = useState([])
+  const [text, setText] = useState(null)
   const [loading, setLoading] = useState(false)
+
+  const router = useRouter()
+
+  const id = '65211c86bf2032dcd63eed49'
 
   useEffect(() => {
     try {
-      setLoading(true)
       axios.get('/api/textarea').then((response) => {
         setTextareas(response.data)
       })
     } catch (error) {
       console.log(error)
-    } finally {
-      setLoading(false)
     }
   }, [])
-
-  const id = '65211c86bf2032dcd63eed49'
-
   const textCineSunt = textareas.find((text) => text._id === id)
 
   const breadcrumbs = [
@@ -58,6 +58,7 @@ export default function CineSunt() {
     router.push('/calculator-numerologic')
   }
 
+  console.log(loading)
   return (
     <Layout>
       <Head>
@@ -66,7 +67,7 @@ export default function CineSunt() {
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
         {loading ? (
-          <p>loading...</p>
+          <p>Loading...</p>
         ) : (
           <>
             <Typography variant="h5" mb={2}>
