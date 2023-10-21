@@ -27,7 +27,12 @@ export default function SliderHome({ slider }) {
         <div className="md:flex items-center justify-between">
           <div className="flex mr-8 gap-3">
             <div>
-              <Image src={slider?.image[0]} alt="" width={600} height={400} />
+              <Image
+                src={'/images/key-2471007_1280.jpg'}
+                alt=""
+                width={600}
+                height={400}
+              />
             </div>
             <div className="flex flex-col items-left justify-center gap-4">
               <Button href={'/numerologie'} variant="contained" color="gold">
