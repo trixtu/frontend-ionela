@@ -2,7 +2,7 @@ import axios from 'axios'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Markup } from 'interweave'
-import { Box } from '@chakra-ui/react'
+import { Box, Spinner } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import Layout from '@/components/Layout'
 import HomeIcon from '@mui/icons-material/Home'
@@ -12,7 +12,7 @@ import { Container, Paper, Typography } from '@mui/material'
 
 export default function CineSunt() {
   const [textareas, setTextareas] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const router = useRouter()
   let textCineSunt = null
@@ -22,11 +22,24 @@ export default function CineSunt() {
   useEffect(() => {
     axios.get('/api/textarea').then((response) => {
       setTextareas(response.data)
+      setLoading(false)
     })
   }, [])
 
-  if (textareas) {
+  function textFinal() {
     textCineSunt = textareas.find((text) => text._id === id)
+  }
+
+  if (textareas) {
+    textFinal()
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center w-auto h-screen">
+        <Spinner fontSize={'9xl'} width={'150px'} height={'150px'} />
+      </div>
+    )
   }
 
   const breadcrumbs = [
@@ -74,7 +87,6 @@ export default function CineSunt() {
                 backgroundSize: 'cover',
               }}
               height={400}
-              borderTopRadius={4}
             />
             <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
               {textCineSunt && <Markup content={textCineSunt?.value} />}

@@ -36,16 +36,31 @@ export default function SliderHome({ slider }) {
               />
             </div>
             <div className=" col-span-2 w-full">
-              <div className="flex flex-col items-left justify-center gap-4">
-                <Button href={'/numerologie'} variant="contained" color="gold">
+              <div className="flex flex-col items-left justify-center gap-4 p-2">
+                <Button
+                  href={'/numerologie'}
+                  variant="contained"
+                  color="gold"
+                  sx={{ fontSize: '12px' }}
+                >
                   Calculator numerologic
                   <ChevronRight size={20} />
                 </Button>
-                <Button href={'/numerologie'} variant="contained" color="gold">
+                <Button
+                  href={'/numerologie'}
+                  variant="contained"
+                  color="gold"
+                  sx={{ fontSize: '12px' }}
+                >
                   Numerologie
                   <ChevronRight size={20} />
                 </Button>
-                <Button href={'#'} variant="contained" color="gold">
+                <Button
+                  href={'#'}
+                  variant="contained"
+                  color="gold"
+                  sx={{ fontSize: '12px' }}
+                >
                   Consiliere pentru dezvoltare personala
                   <ChevronRight size={20} />
                 </Button>

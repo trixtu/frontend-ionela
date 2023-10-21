@@ -8,10 +8,11 @@ import Link from 'next/link'
 import HomeIcon from '@mui/icons-material/Home'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import { Markup } from 'interweave'
+import { Spinner } from '@chakra-ui/react'
 
 export default function CeEsteNumerologia() {
   const [textareas, setTextareas] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const router = useRouter()
   let textCeEsteNumerologia = null
@@ -21,13 +22,25 @@ export default function CeEsteNumerologia() {
   useEffect(() => {
     axios.get('/api/textarea').then((response) => {
       setTextareas(response.data)
+      setLoading(false)
     })
   }, [])
 
-  if (textareas) {
+  function textFinal() {
     textCeEsteNumerologia = textareas.find((text) => text._id === id)
   }
 
+  if (textareas) {
+    textFinal()
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center w-auto h-screen">
+        <Spinner fontSize={'9xl'} width={'150px'} height={'150px'} />
+      </div>
+    )
+  }
   const breadcrumbs = [
     <Link
       underline="hover"
@@ -68,7 +81,6 @@ export default function CeEsteNumerologia() {
             backgroundSize: 'cover',
           }}
           height={400}
-          borderTopRadius={4}
         />
         <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
           {textCeEsteNumerologia && (

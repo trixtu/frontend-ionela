@@ -7,10 +7,11 @@ import HomeIcon from '@mui/icons-material/Home'
 import React, { useEffect, useState } from 'react'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import { Box, Container, Paper, Typography } from '@mui/material'
+import { Spinner } from '@chakra-ui/react'
 
 export default function TrairileElei() {
   const [textareas, setTextareas] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const id = '65268cb75603464a39337d4e'
   let trairileElei = null
@@ -18,11 +19,24 @@ export default function TrairileElei() {
   useEffect(() => {
     axios.get('/api/textarea').then((response) => {
       setTextareas(response.data)
+      setLoading(false)
     })
   }, [])
 
-  if (textareas) {
+  function textFinal() {
     trairileElei = textareas.find((text) => text._id === id)
+  }
+
+  if (textareas) {
+    textFinal()
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center w-auto h-screen">
+        <Spinner fontSize={'9xl'} width={'150px'} height={'150px'} />
+      </div>
+    )
   }
 
   const breadcrumbs = [
