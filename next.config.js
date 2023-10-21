@@ -9,6 +9,10 @@ const nextConfig = {
 module.exports = nextConfig
 
 module.exports = {
+  reactStrictMode: true,
+  images: {
+    domains: ['theodor12-next-ecommerce.s3.amazonaws.com'],
+  },
   experimental: {
     serverActions: true,
     serverComponentsExternalPackages: ['mongoose'],

@@ -20,6 +20,7 @@ import Search from './ui/search'
 import { Avatar } from '@chakra-ui/react'
 import Grid from '@mui/material/Unstable_Grid2'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import Image from 'next/image'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -226,7 +227,7 @@ export default function Navbar() {
                             href={'/'}
                             className="flex flex-col items-center"
                           >
-                            <img
+                            <Image
                               src="/images/2.png"
                               alt=""
                               width={28}
@@ -555,7 +556,7 @@ export default function Navbar() {
           </>
         )}
       </Disclosure>
-      <div className="hidden xl:flex items-center justify-center border-b bg-white sticky top-[71px] z-100 shadow">
+      <div className="hidden xl:flex items-center justify-center border-b bg-white sticky top-[71px] z-10 shadow">
         <div className="ml-10 flex items-baseline nav__menu">
           {navigation.map((item) => (
             <li key={item.name} className="nav__menu-item list-none relative">
