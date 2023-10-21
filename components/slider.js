@@ -25,29 +25,31 @@ export default function SliderHome({ slider }) {
         }}
       >
         <div className="md:flex items-center justify-between">
-          <div className="flex mr-8 gap-3">
-            <div>
+          <div className="flex flex-col items-center justify-center gap-3 md:grid grid-cols-6">
+            <div className="col-span-4 w-full text-center p-2">
               <Image
                 src={'/images/key-2471007_1280.jpg'}
                 alt=""
-                width={600}
+                width={700}
                 height={400}
                 loading="lazy"
               />
             </div>
-            <div className="flex flex-col items-left justify-center gap-4">
-              <Button href={'/numerologie'} variant="contained" color="gold">
-                Calculator numerologic
-                <ChevronRight size={20} />
-              </Button>
-              <Button href={'/numerologie'} variant="contained" color="gold">
-                Numerologie
-                <ChevronRight size={20} />
-              </Button>
-              <Button href={'#'} variant="contained" color="gold">
-                Consiliere pentru dezvoltare personala
-                <ChevronRight size={20} />
-              </Button>
+            <div className=" col-span-2 w-full">
+              <div className="flex flex-col items-left justify-center gap-4">
+                <Button href={'/numerologie'} variant="contained" color="gold">
+                  Calculator numerologic
+                  <ChevronRight size={20} />
+                </Button>
+                <Button href={'/numerologie'} variant="contained" color="gold">
+                  Numerologie
+                  <ChevronRight size={20} />
+                </Button>
+                <Button href={'#'} variant="contained" color="gold">
+                  Consiliere pentru dezvoltare personala
+                  <ChevronRight size={20} />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
