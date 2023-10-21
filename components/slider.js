@@ -32,6 +32,7 @@ export default function SliderHome({ slider }) {
                 alt=""
                 width={600}
                 height={400}
+                loading="lazy"
               />
             </div>
             <div className="flex flex-col items-left justify-center gap-4">
