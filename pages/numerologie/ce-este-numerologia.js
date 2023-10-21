@@ -73,7 +73,9 @@ export default function CeEsteNumerologia() {
       </Head>
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        <Typography>{textCeEsteNumerologia?.title}</Typography>
+        <Typography variant="h5" mb={2}>
+          {textCeEsteNumerologia?.title}
+        </Typography>
         <Box
           style={{
             backgroundImage: `url(${textCeEsteNumerologia?.image[0]})`,

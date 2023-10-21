@@ -72,27 +72,21 @@ export default function CineSunt() {
       </Head>
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <>
-            <Typography variant="h5" mb={2}>
-              {textCineSunt?.title}
-            </Typography>
-            <Box
-              style={{
-                backgroundImage: `url(${textCineSunt?.image[0]})`,
-                backgroundPosition: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-              }}
-              height={400}
-            />
-            <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
-              {textCineSunt && <Markup content={textCineSunt?.value} />}
-            </Paper>
-          </>
-        )}
+        <Typography variant="h5" mb={2}>
+          {textCineSunt?.title}
+        </Typography>
+        <Box
+          style={{
+            backgroundImage: `url(${textCineSunt?.image[0]})`,
+            backgroundPosition: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+          }}
+          height={400}
+        />
+        <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
+          {textCineSunt && <Markup content={textCineSunt?.value} />}
+        </Paper>
       </Container>
     </Layout>
   )
