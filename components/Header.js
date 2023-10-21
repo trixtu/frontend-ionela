@@ -26,8 +26,6 @@ export async function getServerSideProps() {
 
   const slider = await Slider.findById({ id })
 
-  console.log(slider)
-
   return {
     props: {
       slider: JSON.parse(JSON.stringify(slider)),

@@ -1,6 +1,5 @@
 'use client'
 
-import { useLocalStorage } from '@/hooks/useLocaleStorege'
 import { createContext, useEffect, useState } from 'react'
 import { Client, HydrationProvider } from 'react-hydration-provider'
 

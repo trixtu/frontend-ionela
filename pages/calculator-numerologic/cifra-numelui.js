@@ -6,7 +6,7 @@ import Layout from '@/components/Layout'
 import HomeIcon from '@mui/icons-material/Home'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import { Button, Container, Typography } from '@mui/material'
-import { Box, Collapse, Heading, Input, Text } from '@chakra-ui/react'
+import { Box, Collapse, Heading, Input } from '@chakra-ui/react'
 
 export default function CifraNumelui() {
   const router = useRouter()

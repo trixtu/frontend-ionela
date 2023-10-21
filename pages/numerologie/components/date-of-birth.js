@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import {
-  Box,
   Button,
   FormControl,
   InputLabel,
@@ -10,7 +9,6 @@ import {
 } from '@mui/material'
 import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2' // Grid version 2
-import Link from 'next/link'
 
 const tags = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,

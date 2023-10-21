@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import { Rating } from '@mui/material'
-import React, { useContext, useState } from 'react'
 import Link from 'next/link'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import { CartContext } from '@/context/CartContext'
 import { toast } from 'react-toastify'
+import { Rating } from '@mui/material'
+import { CartContext } from '@/context/CartContext'
+import React, { useContext, useState } from 'react'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 
 export default function CardProduct({ products }) {
-  const { addProduct, cartProducts } = useContext(CartContext)
   const [isWished, setIsWished] = useState(false)
+  const { addProduct, cartProducts } = useContext(CartContext)
 
   function addToWishList(ev) {
     ev.preventDefault()

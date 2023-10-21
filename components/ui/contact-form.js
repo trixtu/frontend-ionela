@@ -10,7 +10,6 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { Button } from '@mui/material'
-import { FacebookIcon } from 'lucide-react'
 import React, { useState } from 'react'
 
 const initValues = { name: '', email: '', subject: '', message: '' }

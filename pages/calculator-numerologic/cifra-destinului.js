@@ -1,15 +1,7 @@
 import Layout from '@/components/Layout'
 import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2' // Grid version 2
-import {
-  Box,
-  Container,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  Typography,
-} from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 
 import HomeIcon from '@mui/icons-material/Home'

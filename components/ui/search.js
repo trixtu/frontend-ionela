@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Input } from '@chakra-ui/react'
 import { SearchIcon } from 'lucide-react'
-import axios from 'axios'
-import ProductBox from './product-box'
-import NewProducts from '../new-products'
 import SearchResult from './searchResult'
+import React, { useEffect, useState } from 'react'
 
 function Search() {
   const [phrase, setPhrase] = useState('')

@@ -1,6 +1,4 @@
-import { Review } from '@/models/Review'
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 export default function Rating({ productId }) {
   return (

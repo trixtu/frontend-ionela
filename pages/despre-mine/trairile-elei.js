@@ -3,11 +3,11 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { Markup } from 'interweave'
 import Layout from '@/components/Layout'
+import { Spinner } from '@chakra-ui/react'
 import HomeIcon from '@mui/icons-material/Home'
 import React, { useEffect, useState } from 'react'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import { Box, Container, Paper, Typography } from '@mui/material'
-import { Spinner } from '@chakra-ui/react'
 
 export default function TrairileElei() {
   const [textareas, setTextareas] = useState([])

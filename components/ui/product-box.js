@@ -1,16 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext, useEffect, useState } from 'react'
-import Link from 'next/link'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import { CartContext } from '@/context/CartContext'
 import axios from 'axios'
-import Image from 'next/image'
-import { Box, Button, CardMedia, Rating, Typography } from '@mui/material'
+import Link from 'next/link'
 import { toast } from 'react-toastify'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import StarIcon from '@mui/icons-material/Star'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { CartContext } from '@/context/CartContext'
+import React, { useContext, useState } from 'react'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import { Box, Button, CardMedia, Rating, Typography } from '@mui/material'
 
 const labels = {
   0.5: 'Useless',

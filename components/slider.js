@@ -1,14 +1,4 @@
-import {
-  Box,
-  Button,
-  CardMedia,
-  Container,
-  Grid,
-  Hidden,
-  Paper,
-  Typography,
-} from '@mui/material'
-import Link from 'next/link'
+import { Button, Container, Paper } from '@mui/material'
 import { ChevronRight } from 'lucide-react'
 
 import React from 'react'

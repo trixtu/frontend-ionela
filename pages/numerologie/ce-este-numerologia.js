@@ -41,6 +41,7 @@ export default function CeEsteNumerologia() {
       </div>
     )
   }
+
   const breadcrumbs = [
     <Link
       underline="hover"

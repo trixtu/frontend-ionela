@@ -1,11 +1,11 @@
-import Header from '@/components/Header'
-import CardProduct from '@/components/ui/card-product'
-import { mongooseConnect } from '@/lib/mongoose'
-import { Category } from '@/models/Category'
-import { Product } from '@/models/Product'
-import { Container, Typography } from '@mui/material'
 import axios from 'axios'
+import Header from '@/components/Header'
+import { Product } from '@/models/Product'
+import { Category } from '@/models/Category'
+import { mongooseConnect } from '@/lib/mongoose'
 import React, { useEffect, useState } from 'react'
+import { Container, Typography } from '@mui/material'
+import CardProduct from '@/components/ui/card-product'
 
 export default function CategoryPage({
   category,
