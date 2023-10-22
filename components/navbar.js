@@ -228,9 +228,12 @@ export default function Navbar() {
                             className="flex flex-col items-center"
                           >
                             <div className="w-[28px] h-[28px]">
-                              <img
+                              <Image
                                 className="w-auto h-auto"
                                 src="/images/2.png"
+                                width={28}
+                                height={28}
+                                loading="lazy"
                                 alt=""
                               />
                             </div>
@@ -330,12 +333,28 @@ export default function Navbar() {
                         className="text-textBlack bg-transparent "
                       >
                         <Badge badgeContent={cartItems.length} color="error">
-                          <img
+                          {/* <img
                             src="/images/cart.png"
                             alt=""
                             width={30}
                             height={30}
-                          />
+                          /> */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="28"
+                            height="28"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-shopping-cart text-black"
+                          >
+                            <circle cx="8" cy="21" r="1" />
+                            <circle cx="19" cy="21" r="1" />
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                          </svg>
                         </Badge>
                       </IconButton>
                     </Link>

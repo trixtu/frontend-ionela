@@ -14,12 +14,12 @@ export default function Footer() {
           ' url(/images/copper-color-background-with-blur-and-smooth-texture-for-festive-metallic-graphic-design-element-vector.jpg)',
       }}
     >
-      <div
+      {/* <div
         className="bg-contain  h-[5px]"
         style={{
           backgroundImage: ' url(/images/53f3ee01b5165a2abdd4c6d8d9123119.jpg)',
         }}
-      />
+      /> */}
 
       <Container>
         <Grid container spacing={2} paddingBottom={4}>
