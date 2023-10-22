@@ -1,14 +1,15 @@
-import { CartContextProvider } from '@/context/CartContext'
-import { SessionProvider } from 'next-auth/react'
 import '@/styles/globals.css'
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
-import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { ThemeProvider, createTheme } from '@mui/material'
+import { ToastContainer } from 'react-toastify'
+import { SessionProvider } from 'next-auth/react'
 import { ChakraProvider } from '@chakra-ui/react'
+import { Analytics } from '@vercel/analytics/react'
+import { ThemeProvider, createTheme } from '@mui/material'
+import { CartContextProvider } from '@/context/CartContext'
 
 const theme = createTheme({
   palette: {
@@ -44,6 +45,7 @@ export default function App({
           <SessionProvider session={session}>
             <CartContextProvider>
               <Component {...pageProps} />
+              <Analytics />
               <ToastContainer />
             </CartContextProvider>
           </SessionProvider>
