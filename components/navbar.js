@@ -227,12 +227,13 @@ export default function Navbar() {
                             href={'/'}
                             className="flex flex-col items-center"
                           >
-                            <Image
-                              src="/images/2.png"
-                              alt=""
-                              width={28}
-                              height={28}
-                            />
+                            <div className="w-[28px] h-[28px]">
+                              <img
+                                className="w-auto h-auto"
+                                src="/images/2.png"
+                                alt=""
+                              />
+                            </div>
                             <Typography
                               variant="subtitle2"
                               className="text-center"
