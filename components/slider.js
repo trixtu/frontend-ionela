@@ -18,11 +18,10 @@ export default function SliderHome({ slider }) {
           <div className="flex flex-col items-center justify-center gap-3 md:grid grid-cols-6">
             <div className="col-span-4 w-full text-center p-2">
               <Image
-                src={'/images/key-2471007_1280.jpg'}
+                src={'/images/key-2471007.jpg'}
                 alt=""
-                className="w-auto h-auto"
-                width={700}
-                height={400}
+                width={800}
+                height={600}
                 priority
               />
             </div>

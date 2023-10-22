@@ -21,6 +21,7 @@ import { Avatar } from '@chakra-ui/react'
 import Grid from '@mui/material/Unstable_Grid2'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import Image from 'next/image'
+import { ShoppingCart } from 'lucide-react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -229,8 +230,7 @@ export default function Navbar() {
                           >
                             <div className="w-[28px] h-[28px]">
                               <Image
-                                className="w-auto h-auto"
-                                src="/images/2.png"
+                                src="/images/2_1_60x60.png"
                                 width={28}
                                 height={28}
                                 loading="lazy"
@@ -339,22 +339,7 @@ export default function Navbar() {
                             width={30}
                             height={30}
                           /> */}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="28"
-                            height="28"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide lucide-shopping-cart text-black"
-                          >
-                            <circle cx="8" cy="21" r="1" />
-                            <circle cx="19" cy="21" r="1" />
-                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                          </svg>
+                          <ShoppingCart className="w-8 h-8 text-black" />
                         </Badge>
                       </IconButton>
                     </Link>
