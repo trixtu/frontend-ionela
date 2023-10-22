@@ -9,6 +9,7 @@ import { WhischedProduct } from '@/models/WischedProduct'
 import { Review } from '@/models/Review'
 import { Slider } from '@/models/Slider'
 import Head from 'next/head'
+import SliderHome from '@/components/slider'
 
 export default function HomePage({
   products,
@@ -21,6 +22,8 @@ export default function HomePage({
       <Head>
         <title>Home</title>
       </Head>
+
+      <SliderHome slider={slider} />
       {/* <NewProducts
         products={products}
         wishedProducts={wishedNewProducts}
