@@ -81,7 +81,10 @@ export default function TrairileElei() {
           }}
           height={400}
         />
-        <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
+        <Paper
+          variant="outlined"
+          sx={{ height: '100%', padding: '10px', marginBottom: '40px' }}
+        >
           {trairileElei && <Markup content={trairileElei?.value} />}
         </Paper>
       </Container>

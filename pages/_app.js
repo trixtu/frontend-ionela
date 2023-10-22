@@ -28,6 +28,11 @@ const theme = createTheme({
   },
 })
 
+export const metadata = {
+  title: 'Numerologie consiliere',
+  description: 'Afla care este numarul tau numerologic.',
+}
+
 export function reportWebVitals(metric) {
   if (metric.label === 'web-vital') {
     console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console

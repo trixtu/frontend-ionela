@@ -64,7 +64,6 @@ export default function CeEsteNumerologia() {
     event.preventDefault()
     router.push('/')
   }
-  console.log(textCeEsteNumerologia)
 
   return (
     <Layout>
@@ -85,7 +84,10 @@ export default function CeEsteNumerologia() {
           }}
           height={400}
         />
-        <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
+        <Paper
+          variant="outlined"
+          sx={{ height: '100%', padding: '10px', marginBottom: '40px' }}
+        >
           {textCeEsteNumerologia && (
             <Markup content={textCeEsteNumerologia?.value} />
           )}

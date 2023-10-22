@@ -84,7 +84,10 @@ export default function CineSunt() {
           }}
           height={400}
         />
-        <Paper variant="outlined" sx={{ height: '100%', padding: '10px' }}>
+        <Paper
+          variant="outlined"
+          sx={{ height: '100%', padding: '10px', marginBottom: '40px' }}
+        >
           {textCineSunt && <Markup content={textCineSunt?.value} />}
         </Paper>
       </Container>
