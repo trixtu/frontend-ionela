@@ -17,16 +17,14 @@ export default function SliderHome({ slider }) {
         <div className="md:flex items-center justify-between">
           <div className="flex flex-col items-center justify-center gap-3 md:grid grid-cols-6">
             <div className="col-span-4 w-full text-center p-2">
-              <div className="w-[700px] h-[400px]">
-                <Image
-                  src={'/images/key-2471007_1280.jpg'}
-                  alt=""
-                  className="w-auto h-auto"
-                  width={700}
-                  height={400}
-                  priority
-                />
-              </div>
+              <Image
+                src={'/images/key-2471007_1280.jpg'}
+                alt=""
+                className="w-auto h-auto"
+                width={700}
+                height={400}
+                priority
+              />
             </div>
             <div className=" col-span-2 w-full">
               <div className="flex flex-col items-left justify-center gap-4 p-2">
