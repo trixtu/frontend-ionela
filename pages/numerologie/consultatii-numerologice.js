@@ -80,6 +80,7 @@ export default function ConsultatiiNumerologice() {
             backgroundImage: `url(${textConsultatiiNumerologice?.image[0]})`,
             backgroundPosition: 'cover',
             backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
             backgroundSize: 'cover',
           }}
           height={400}
