@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import MaAbonez from './ui/ma-abonez'
 import ContactMe from './ui/contact-me'
 import TrimiteMesaj from './ui/trimite-mi-mesaj'
 import { Container, Divider, Grid } from '@mui/material'
+import NewsletterSubscribe from './footer/NewsletterSubscribe'
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
       <Container>
         <Grid container spacing={2} paddingBottom={4}>
           <Grid item xs={12} md={4}>
-            <MaAbonez />
+            <NewsletterSubscribe />
           </Grid>
           <Grid item xs={12} md={4}>
             <ContactMe />
