@@ -34,7 +34,7 @@ export default function TrairileElei() {
   if (loading) {
     return (
       <div className="flex items-center justify-center w-auto h-screen">
-        <Spinner fontSize={'9xl'} width={'150px'} height={'150px'} />
+        <Spinner fontSize={'6xl'} width={'100px'} height={'100px'} />
       </div>
     )
   }

@@ -10,6 +10,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider, createTheme } from '@mui/material'
 import { CartContextProvider } from '@/context/CartContext'
+import { Metadata } from 'next'
 
 const theme = createTheme({
   palette: {
@@ -29,8 +30,11 @@ const theme = createTheme({
 })
 
 export const metadata = {
-  title: 'Numerologie consiliere',
-  description: 'Afla care este numarul tau numerologic.',
+  title: 'Numerologie | Consiliere',
+  description:
+    'Descoperiti puterea numerologiei pentru a va ghida viata. Consultati experti in numerologie pentru  consiliere personalizata si intalegeti mai bine traseul vietii dvs. Aflati cum cifrele va pot dezvalui destinul. www.numerologie-consiliere.ro va ofera raspunsurile pe care le cautati.',
+  metadataBase: new URL('https://www.numerologie-consiliere.ro'),
+  charSet: 'utf-8',
 }
 
 export function reportWebVitals(metric) {

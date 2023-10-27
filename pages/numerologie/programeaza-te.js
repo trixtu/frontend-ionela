@@ -5,6 +5,7 @@ import HomeIcon from '@mui/icons-material/Home'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import { useRouter } from 'next/router'
+import CalendlyForm from '@/components/CalendlyForm'
 
 export default function ProgrameazaTe() {
   const router = useRouter()
@@ -36,8 +37,13 @@ export default function ProgrameazaTe() {
     <Layout>
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        <div>Programeaza-Te</div>
+        <Typography variant="h5" mb={2}>
+          Programeaza-Te
+        </Typography>
       </Container>
+      <div className="-mt-14 mb-5">
+        <CalendlyForm className="m-0" />
+      </div>
     </Layout>
   )
 }
