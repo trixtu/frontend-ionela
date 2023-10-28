@@ -1,5 +1,4 @@
 import React from 'react'
-
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import NesletterForm from './NesletterForm'
 

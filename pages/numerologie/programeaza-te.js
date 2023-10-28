@@ -6,6 +6,8 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import { useRouter } from 'next/router'
 import CalendlyForm from '@/components/CalendlyForm'
+import MailchimpSubscribe from '@/components/ui/contact-form/mailchimp-subscribe'
+import ContactFormMailchimpSubscribe from '@/components/ui/contact-form/mailchimp-subscribe'
 
 export default function ProgrameazaTe() {
   const router = useRouter()
@@ -40,10 +42,8 @@ export default function ProgrameazaTe() {
         <Typography variant="h5" mb={2}>
           Programeaza-Te
         </Typography>
+        <ContactFormMailchimpSubscribe />
       </Container>
-      <div className="-mt-14 mb-5">
-        <CalendlyForm className="m-0" />
-      </div>
     </Layout>
   )
 }

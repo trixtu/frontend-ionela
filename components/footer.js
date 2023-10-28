@@ -7,7 +7,7 @@ import NewsletterSubscribe from './footer/NewsletterSubscribe'
 
 export default function Footer() {
   return (
-    <div
+    <footer
       className="bg-cover bg-top h-full w-full"
       style={{
         backgroundImage:
@@ -53,6 +53,6 @@ export default function Footer() {
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </footer>
   )
 }
