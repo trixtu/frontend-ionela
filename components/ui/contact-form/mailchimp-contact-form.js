@@ -106,6 +106,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
       setTelefon('')
       setTextarea('')
     }
+
     return value && email && email.indexOf('@') > -1 && isFormValidated
   }
 
@@ -147,28 +148,19 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
 
   return (
     <section className="mb-8 mt-6">
-      {
-        'success' === status &&
-          error !== status &&
-          !error &&
-          // <div
-          //   className="text-green-200 font-bold pt-2"
-          //   dangerouslySetInnerHTML={{ __html: sanitize(message) }}
-          // />
-          toast.success(
-            <div dangerouslySetInnerHTML={{ __html: sanitize(message) }} />
-          )
-        // <Alert severity="success">
-        //   <div dangerouslySetInnerHTML={{ __html: sanitize(message) }} />
-        // </Alert>
-      }
+      {'success' === status && error !== status && !error && (
+        <div dangerouslySetInnerHTML={{ __html: sanitize(message) }} />
+      )}
       {'error' === status && (
         <Alert severity="error">
           <div dangerouslySetInnerHTML={{ __html: sanitize(message) }} />
         </Alert>
       )}
       <FormControl>
-        <label id="demo-radio-buttons-group-label">
+        <label
+          className="text-lg font-semibold"
+          id="demo-radio-buttons-group-label"
+        >
           Cum iti pot fi de folos?
           <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
         </label>
@@ -206,7 +198,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
       </FormControl>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label id="nume-form">
+          <label id="nume-form" className="text-lg font-semibold">
             Nume
             <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
           </label>
@@ -223,7 +215,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
           ) : null}
         </div>
         <div>
-          <label id="prenume-form">
+          <label id="prenume-form" className="text-lg font-semibold">
             Prenume
             <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
           </label>
@@ -241,7 +233,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
         </div>
       </div>
       <div>
-        <label id="data-nastere">
+        <label id="data-nastere" className="text-lg font-semibold">
           ZIUA - LUNA - ANUL nasterii
           <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
         </label>
@@ -258,7 +250,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
         ) : null}
       </div>
       <div>
-        <label id="email">
+        <label id="email" className="text-lg font-semibold">
           Email
           <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
         </label>
@@ -284,7 +276,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
         ) : null}
       </div>
       <div>
-        <label id="telefon">
+        <label id="telefon" className="text-lg font-semibold">
           Telefon
           <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
         </label>
@@ -301,7 +293,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
         ) : null}
       </div>
       <div>
-        <label id="textarea">
+        <label id="textarea" className="text-lg font-semibold">
           Povestește-mi pe scurt situatia la care doresti sa lucrăm împreună
           <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
         </label>

@@ -10,7 +10,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider, createTheme } from '@mui/material'
 import { CartContextProvider } from '@/context/CartContext'
-import { Metadata } from 'next'
+import { LazyMotion, domAnimation } from 'framer-motion'
 
 const theme = createTheme({
   palette: {
@@ -53,7 +53,9 @@ export default function App({
         <ThemeProvider theme={theme}>
           <SessionProvider session={session}>
             <CartContextProvider>
-              <Component {...pageProps} />
+              <LazyMotion features={domAnimation}>
+                <Component {...pageProps} />
+              </LazyMotion>
               <Analytics />
               <ToastContainer />
             </CartContextProvider>

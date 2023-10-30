@@ -23,6 +23,7 @@ export default function SliderHome({ slider }) {
                 width={800}
                 height={600}
                 priority
+                loading="eager"
               />
             </div>
             <div className=" col-span-2 w-full">

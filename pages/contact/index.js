@@ -12,10 +12,17 @@ import Link from 'next/link'
 import HomeIcon from '@mui/icons-material/Home'
 import { useRouter } from 'next/router'
 import Breadcrumb from '@/components/ui/breadcrumb'
+import { Metadata } from 'next'
 
 const initValues = { name: '', email: '', subject: '', message: '' }
 const initState = { values: initValues }
 
+export async function generateMetadata() {
+  return {
+    title: 'Contact',
+    description: 'Pagina de contact',
+  }
+}
 export default function ContactPage() {
   const router = useRouter()
   const breadcrumbs = [

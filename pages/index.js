@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout'
-import NewProducts from '@/components/new-products'
 import { mongooseConnect } from '@/lib/mongoose'
 import { Product } from '@/models/Product'
 import React from 'react'
@@ -10,6 +9,22 @@ import { Review } from '@/models/Review'
 import { Slider } from '@/models/Slider'
 import Head from 'next/head'
 import SliderHome from '@/components/slider'
+import { NextSeo } from 'next-seo'
+
+const SEO = () => {
+  ;<>
+    <NextSeo
+      description=""
+      openGraph={{
+        images: [
+          {
+            url: '',
+          },
+        ],
+      }}
+    />
+  </>
+}
 
 export default function HomePage({
   products,
