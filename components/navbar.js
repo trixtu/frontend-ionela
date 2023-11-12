@@ -145,8 +145,26 @@ export default function Navbar() {
     },
     {
       name: 'Consiliere dezvoltare personala',
-      href: '/consiliere',
-      current: router.pathname === '/consiliere' && true,
+      href: '',
+      current:
+        (router.pathname === '/consiliere' && true) ||
+        (router.pathname === '/consiliere/cui-se-adreseaza' && true) ||
+        (router.pathname === '/consiliere/consiliere-dezvoltare-personala' &&
+          true),
+      submenu: [
+        {
+          name: 'Ce este si cui se adreseaza?',
+          href: '/consiliere/cui-se-adreseaza',
+          current: router.pathname === '/consiliere/cui-se-adreseaza' && true,
+        },
+        {
+          name: 'Consiliere pentru dezvoltare personala 1:1',
+          href: '/consiliere/consiliere-dezvoltare-personala',
+          current:
+            router.pathname === '/consiliere/consiliere-dezvoltare-personala' &&
+            true,
+        },
+      ],
     },
     // {
     //   name: 'Blog',

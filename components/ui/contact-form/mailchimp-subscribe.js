@@ -7,16 +7,14 @@ const ContactFormMailchimpSubscribe = () => {
   const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_CONTACT_URL
 
   return (
-    <>
+    <div className="mb-4">
       <div className="flex flex-col gap-4">
-        <Typography variant="overline">
-          „Trauma creează schimbări pe care nu le alegi; vindecarea creează o
-          schimbare pe care o alegi.”
-        </Typography>
-
         <Typography variant="p">
-          Completează formularul de mai jos și voi reveni cu un telefon pentru a
-          stabili o data si o ora pentru intalnirea noastra.
+          Completează formularul de mai jos{' '}
+          <strong>
+            si te voi contacta pentru a stabili impreuna detaliile pentru
+            intalnirea noastra.
+          </strong>
         </Typography>
       </div>
       <MailchimpSubscribe
@@ -32,7 +30,7 @@ const ContactFormMailchimpSubscribe = () => {
           )
         }}
       />
-    </>
+    </div>
   )
 }
 

@@ -37,10 +37,10 @@ export default function ProgrameazaTe() {
 
   return (
     <Layout>
-      <Container>
+      <Container className="mb-4">
         <Breadcrumb breadcrumbs={breadcrumbs} />
         <Typography variant="h5" mb={2}>
-          Programeaza-Te
+          Doresc o programare
         </Typography>
         <ContactFormMailchimpSubscribe />
       </Container>

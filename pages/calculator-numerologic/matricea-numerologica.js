@@ -387,20 +387,20 @@ export default function MatriceaNumerologica() {
           </Button>
         </div>
         <div className="mt-4 mb-4">
-          <table className="table-bordered table-2 matrice">
+          <table className="table-bordered table-2 matrice text-xs">
             <tbody>
               <tr className="flex">
                 <td className="w-32 border bg-red-300 flex flex-col items-center p-3">
                   <b className="text-xl">{matriceUnu ? matriceUnu : <br />}</b>
                   <span className="uppercase">Caracter</span>
                 </td>
-                <td className="w-32 p-3 border bg-[#fedc99]  flex flex-col items-center">
+                <td className="w-32   p-3 border bg-[#fedc99]  flex flex-col items-center">
                   <b className="text-xl">
                     {matricePatru ? matricePatru : <br />}
                   </b>
                   <span className="uppercase">SĂNĂTATE</span>
                 </td>
-                <td className=" w-28 border bg-[#ebfbdc] p-3 flex flex-col items-center">
+                <td className=" w-32 border bg-[#ebfbdc] p-3 flex flex-col items-center">
                   <b className="text-xl">
                     {matriceSapte ? matriceSapte : <br />}
                   </b>
@@ -418,9 +418,9 @@ export default function MatriceaNumerologica() {
                   </b>
                   <span className="uppercase">INTUIȚIE</span>
                 </td>
-                <td className="w-28 border bg-[#fedc99] p-3 flex flex-col items-center">
+                <td className="w-32 border bg-[#fedc99] p-3 flex flex-col items-center">
                   <b className="text-xl">{matriceOpt ? matriceOpt : <br />}</b>
-                  <span className="uppercase">Datoria</span>
+                  <span className="uppercase">Simt al Datoriei</span>
                 </td>
               </tr>
               <tr className="flex">
@@ -436,7 +436,7 @@ export default function MatriceaNumerologica() {
                   </b>
                   <span className="uppercase">SIMȚ PRACTIC</span>
                 </td>
-                <td className="w-28 border bg-red-300 p-3 flex flex-col items-center">
+                <td className="w-32 border bg-red-300 p-3 flex flex-col items-center">
                   <b className="text-xl">
                     {matriceNoua ? matriceNoua : <br />}
                   </b>

@@ -130,7 +130,7 @@ export default function CifraDestinului() {
               marginTop={5}
               paddingBottom={2}
             >
-              Numerology: Your Life Path Number
+              Numerologie: Cifra destinului
             </Typography>
             <Grid container spacing={2} marginBottom={2}>
               {numbers.map((number, index) => (
@@ -162,14 +162,16 @@ export default function CifraDestinului() {
                 padding: '20px',
               }}
             >
-              <Typography variant="h5">Find Your Life Path Number</Typography>
+              <Typography variant="h5">
+                Afla care este CIFRA DESTINULUI tau
+              </Typography>
               <Typography
                 variant="subtitle1"
                 sx={{
                   marginBottom: '20px',
                 }}
               >
-                Enter your birthdate to calculate your birth path number.
+                Adauga data nasterii pentru a calcula Cifra Destinului
               </Typography>
               <DateOfBirth />
             </Box>

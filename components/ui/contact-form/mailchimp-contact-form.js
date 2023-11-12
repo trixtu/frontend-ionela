@@ -78,13 +78,13 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
       setMessageForm(null)
     }
 
-    if (!textarea) {
-      setError('textarea')
-      setMessageForm('This field ist required.')
-      return null
-    } else {
-      setMessageForm(null)
-    }
+    // if (!textarea) {
+    //   setError('textarea')
+    //   setMessageForm('This field ist required.')
+    //   return null
+    // } else {
+    //   setMessageForm(null)
+    // }
 
     const isFormValidated = onValidated({
       MMERGE6: value,
@@ -177,11 +177,11 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
             label="Sedinta de consultanta numerologica 1:1"
           />
           <FormControlLabel
-            value="Doresc Analiza numerologica personalizata- raport scris"
+            value="Doresc Analiza numerologica (prezentare scrisa)"
             control={<Radio />}
-            label="Doresc Analiza numerologica personalizata- raport scris"
+            label="Doresc Analiza numerologica (prezentare scrisa)"
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             value="Matricea bioenergoinformationala- raport scris"
             control={<Radio />}
             label="Matricea bioenergoinformationala- raport scris"
@@ -190,7 +190,7 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
             value="Instruire numerologica de baza"
             control={<Radio />}
             label="Instruire numerologica de baza"
-          />
+          /> */}
         </RadioGroup>
         {error === 'value' ? (
           <span className="text-red-700">{messageForm}</span>
@@ -294,8 +294,8 @@ export default function MailchimpContactForm({ status, message, onValidated }) {
       </div>
       <div>
         <label id="textarea" className="text-lg font-semibold">
-          Povestește-mi pe scurt situatia la care doresti sa lucrăm împreună
-          <span className="ml-1 text-red-600 text-lg font-semibold">*</span>
+          Mesajul tau (optional)
+          {/* <span className="ml-1 text-red-600 text-lg font-semibold">*</span> */}
         </label>
         <textarea
           id="textarea"

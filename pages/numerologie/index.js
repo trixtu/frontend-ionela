@@ -123,7 +123,6 @@ export default function Numerologie() {
     <Layout>
       <Container>
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        dfdfdf
       </Container>
     </Layout>
   )

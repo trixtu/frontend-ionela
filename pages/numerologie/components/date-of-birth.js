@@ -186,15 +186,15 @@ export default function DateOfBirth() {
           marginBottom: 2,
         }}
       >
-        Life Path - Calculator
+        Cifra destinului - Calculator
       </Typography>
       <Typography variant="h6" textAlign={'left'}>
-        Date of Birth:
+        Data nasterii:
       </Typography>
       <Grid container spacing={2} marginBottom={6}>
         <Grid xs={2}>
           <FormControl fullWidth size="small">
-            <InputLabel id="tag">Day</InputLabel>
+            <InputLabel id="tag">Ziua</InputLabel>
             <Select
               labelId="tag"
               id="tag"
@@ -213,7 +213,7 @@ export default function DateOfBirth() {
 
         <Grid xs={6}>
           <FormControl fullWidth size="small">
-            <InputLabel id="month">Month</InputLabel>
+            <InputLabel id="month">Luna</InputLabel>
             <Select
               labelId="month"
               id="month"
@@ -232,7 +232,7 @@ export default function DateOfBirth() {
 
         <Grid xs={4}>
           <FormControl fullWidth size="small">
-            <InputLabel id="month">Year</InputLabel>
+            <InputLabel id="month">Anul</InputLabel>
             <Select
               labelId="month"
               id="month"
@@ -255,7 +255,7 @@ export default function DateOfBirth() {
           disabled={selectedTag && selectedMonth && selectedYear ? false : true}
           onClick={handleCalculate}
         >
-          Calculate
+          Calculeaza
         </Button>
         {lifePathNumber && (
           <>
@@ -269,7 +269,7 @@ export default function DateOfBirth() {
             </div> */}
             <div className="w-full flex flex-col items-center justify-center  mt-4">
               <Typography variant="subtitle1" fontWeight={500}>
-                Your Life Path Number is:
+                Cifra destinului este:
               </Typography>
               <div
                 className="rounded-full w-12 h-12 text-center justify-center flex items-center bg-cover bg-center font-bold text-white"

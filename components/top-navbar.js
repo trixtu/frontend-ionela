@@ -48,14 +48,13 @@ export default function TopNavBar() {
           </Grid>
         </Grid>
       </Container>
-      {/* <div
+      <div
         className="bg-contain  h-[5px]"
         style={{
           backgroundImage: ' url(/images/53f3ee01b5165a2abdd4c6d8d9123119.jpg)',
           width: 'auto',
-          height: 'auto',
         }}
-      /> */}
+      />
     </div>
   )
 }
