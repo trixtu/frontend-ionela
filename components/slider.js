@@ -29,7 +29,7 @@ export default function SliderHome({ slider }) {
             <div className=" col-span-2 w-full">
               <div className="flex flex-col items-left justify-center gap-4 p-2">
                 <Button
-                  href={'/numerologie'}
+                  href={'/calculator-numerologic/cifra-destinului'}
                   variant="contained"
                   color="gold"
                   sx={{ fontSize: '12px' }}
@@ -38,7 +38,7 @@ export default function SliderHome({ slider }) {
                   <ChevronRight size={20} />
                 </Button>
                 <Button
-                  href={'/numerologie'}
+                  href={'/numerologie/ce-este-numerologia'}
                   variant="contained"
                   color="gold"
                   sx={{ fontSize: '12px' }}
@@ -47,7 +47,7 @@ export default function SliderHome({ slider }) {
                   <ChevronRight size={20} />
                 </Button>
                 <Button
-                  href={'#'}
+                  href={'/consiliere/cui-se-adreseaza'}
                   variant="contained"
                   color="gold"
                   sx={{ fontSize: '12px' }}

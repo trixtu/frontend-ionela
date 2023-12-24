@@ -86,8 +86,9 @@ export default function Navbar() {
       name: 'Numerologie',
       href: '',
       current:
-        (router.pathname === '/numerologie/matricea-numerologica' && true) ||
-        (router.pathname === '/numerologie' && true),
+        (router.pathname === '/numerologie/analiza-numerologica-personalizata' && true) ||
+        (router.pathname === '/numerologie/ce-este-numerologia' && true) ||
+        (router.pathname === '/numerologie/consultatii-numerologice' && true),
 
       submenu: [
         {
@@ -104,9 +105,9 @@ export default function Navbar() {
         },
         {
           name: 'Analiza numerologica personalizata (prezentare scrisa)',
-          href: '/numerologie/analiza-personalizata',
+          href: '/numerologie/analiza-numerologica-personalizata',
           current:
-            router.pathname === '/numerologie/analiza-personalizata' && true,
+            router.pathname === '/numerologie/analiza-numerologica-personalizata' && true,
         },
       ],
     },
