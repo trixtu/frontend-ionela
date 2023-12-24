@@ -10,9 +10,10 @@ import { Slider } from '@/models/Slider'
 import Head from 'next/head'
 import SliderHome from '@/components/slider'
 import { NextSeo } from 'next-seo'
+import HomePageUnu from '@/components/home-page-unu'
 
 const SEO = () => {
-  ;<>
+  <>
     <NextSeo
       description=""
       openGraph={{
@@ -44,6 +45,7 @@ export default function HomePage({
         wishedProducts={wishedNewProducts}
         ratings={ratings}
       /> */}
+      <HomePageUnu />
     </Layout>
   )
 }
