@@ -230,7 +230,7 @@ export default function Navbar() {
                 paddingTop={'2px'}
               >
                 <Grid
-                  xs={5}
+                  xs={6}
                   md={3}
                   sx={{
                     display: 'flex',
@@ -241,7 +241,7 @@ export default function Navbar() {
                 >
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <div className="p-2 w-[220px] h-[60px]">
+                      <div className="p-4 w-[220px] h-[60px]">
                         <div className="flex items-center justify-center capitalize h-full">
                           <Link
                             href={'/'}
@@ -281,7 +281,7 @@ export default function Navbar() {
                 </Grid>
 
                 <Grid
-                  xs={3}
+                  xs={1}
                   md={7}
                   sx={{
                     display: 'flex',
@@ -296,7 +296,7 @@ export default function Navbar() {
                 </Grid>
 
                 <Grid
-                  xs={3}
+                  xs={4}
                   md={2}
                   sx={{
                     display: 'flex',
