@@ -8,7 +8,7 @@ export const transporter = nodemailer.createTransport({
   auth: {
     user: email,
     pass,
-  },
+  },  
 })
 
 export const mailOptions = {

@@ -12,7 +12,7 @@ import {
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
 
-const initValues = { name: '', email: '', subject: '', message: '' }
+const initValues = { name: '', email: '', message: '' }
 const initState = { values: initValues }
 
 export default function ContactForm() {
@@ -38,7 +38,7 @@ export default function ContactForm() {
     }))
 
   const onSubmit = async () => {
-    if (!values.name || !values.email || !values.subject || !values.message) {
+    if (!values.name || !values.email || !values.message) {
       toast({
         title: 'Completeaza campurile obligatorii (*)',
         status: 'warning',

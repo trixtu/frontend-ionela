@@ -23,23 +23,23 @@ export default function TopNavBar() {
         <Grid container spacing={1} columns={16}>
           <Grid item xs={8}>
             <ul className="flex gap-2">
-              <Link href={'/'}>
+              <Link href={'https://www.facebook.com/profile.php?id=100093896307800'}>
                 <FacebookRoundedIcon fontSize="12px" />
               </Link>
-              <Link href={'/'}>
+              <Link href={'https://www.youtube.com/channel/UCv-3HpKbqaQWbiIOBkOzxig'}>
                 <YouTubeIcon fontSize="12px" />
               </Link>
-              <Link href={'/'}>
+              <Link href={'https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Felacojocaru%3Figshid%3DNzZlODBkYWE4Ng%253D%253D%26fbclid%3DIwAR146nBz4X-yx9I-XdnHH8XxgEtBDauWkwpMkBTZWN_XOg0pYhgac0vvR_4&h=AT1vYqG9E_rQFntgBQwIqkm7LVxRnMcsn4RoZXBb6uy7SDVouqT0KKdeYwIZJsGqHaJwkNqabDzNSHfLMUQlVsIyZnn2ZZ_vWiiUeOnauD24bGy8IqNxxc3AC0sOGn2AVbI'}>
                 <InstagramIcon fontSize="12px" />
               </Link>
             </ul>
           </Grid>
           <Grid item xs={8} className=" text-right">
             <ul className="flex justify-end gap-2 text-sm">
-              <Link href={'/'} className="flex gap-1 items-center">
+              {/* <Link href={'/'} className="flex gap-1 items-center">
                 <PhoneAndroidIcon fontSize="12px" />
                 +401704015687
-              </Link>
+              </Link> */}
               <Link href={'/'} className="flex gap-1 items-center">
                 <EmailIcon fontSize="12px" />
                 cubitt12@gmail.com

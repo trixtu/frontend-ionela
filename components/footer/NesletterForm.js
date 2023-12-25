@@ -69,13 +69,13 @@ const NesletterForm = ({ status, message, onValidated }) => {
   return (
     <div className="flex flex-col justify-center text-neutral-900 mt-10 mr-10 min-h-[220px]">
       <div className="flex items-center gap-2 mb-4 ">
-        <Link href={'#'}>
+        <Link href={'https://www.facebook.com/profile.php?id=100093896307800'}>
           <FacebookIcon fontSize="large" />
         </Link>
-        <Link href={'#'}>
+        <Link href={'https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Felacojocaru%3Figshid%3DNzZlODBkYWE4Ng%253D%253D%26fbclid%3DIwAR146nBz4X-yx9I-XdnHH8XxgEtBDauWkwpMkBTZWN_XOg0pYhgac0vvR_4&h=AT1vYqG9E_rQFntgBQwIqkm7LVxRnMcsn4RoZXBb6uy7SDVouqT0KKdeYwIZJsGqHaJwkNqabDzNSHfLMUQlVsIyZnn2ZZ_vWiiUeOnauD24bGy8IqNxxc3AC0sOGn2AVbI'}>
           <InstagramIcon fontSize="large" />
         </Link>
-        <Link href={'#'}>
+        <Link href={'https://www.youtube.com/channel/UCv-3HpKbqaQWbiIOBkOzxig'}>
           <YouTubeIcon fontSize="large" />
         </Link>
       </div>

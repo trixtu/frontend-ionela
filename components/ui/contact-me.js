@@ -10,9 +10,9 @@ export default function ContactMe() {
       <Typography variant="subtitle1" marginBottom={2}>
         Relații comenzi și livrare
       </Typography>
-      <Typography variant="subtitle2">
+      {/* <Typography variant="subtitle2">
         Telefon: <span>0754 244 333</span>
-      </Typography>
+      </Typography> */}
       <Typography variant="subtitle2">
         E-mail: <span>vanzari@numerologie-consiliere.ro</span>
       </Typography>
