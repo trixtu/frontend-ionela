@@ -18,7 +18,6 @@ export default function CifraNumelui() {
   function letterValue(str) {
     var anum = {
       a: 1,
-      A: 1,
       b: 2,
       c: 3,
       d: 4,
@@ -52,27 +51,23 @@ export default function CifraNumelui() {
 
   function handleClickCalculeaza() {
     let sumPrenumeFinal = 0
-    let sumNumeFinal = 0
-
-    const firstNumeArr = letterValue(nume.toLowerCase())
-    const firstPrenumeArr = letterValue(prenume.toLowerCase())
 
     // Funcție care elimină spațiile și convertește restul caracterelor în numere
   function processName(name) {
     return letterValue(name.replace(/\s/g, '').toLowerCase());
   }
 
+
   // Procesează numele și prenumele pentru a elimina spațiile
-  const processedFirstNumeArr = processName(nume);
   const processedFirstPrenumeArr = processName(prenume);
 
-
-    if (prenume.length > 0 && processedFirstPrenumeArr.length >= 2) {
+    if (processedFirstPrenumeArr.length >= 2) {
       const firstSumPrenume = processedFirstPrenumeArr.reduce(
         (acumulator, currentValue) => acumulator + currentValue,
         0
       )
 
+      console.log(firstSumPrenume)
       if (firstSumPrenume > 9) {
         const secondSumPrenumeArr = String(firstSumPrenume)
           .split('')
@@ -98,47 +93,16 @@ export default function CifraNumelui() {
         } else {
           sumPrenumeFinal = secondSumPrenume
         }
+
+      }else{
+        sumPrenumeFinal = firstSumPrenume
       }
     }
-
-    if (nume.length > 0 && processedFirstNumeArr.length >= 2) {
-      const firstSumNume = processedFirstNumeArr.reduce(
-        (acumulator, currentValue) => acumulator + currentValue,
-        0
-      )
-
-      if (firstSumNume > 9) {
-        const secondSumNumeArr = String(firstSumNume)
-          .split('')
-          .map((num) => {
-            return Number(num)
-          })
-        const secondSumNume = secondSumNumeArr.reduce(
-          (acumulator, currentValue) => acumulator + currentValue,
-          0
-        )
-
-        if (secondSumNume > 9) {
-          const thirdSumNumeArr = String(secondSumNume)
-            .split('')
-            .map((num) => {
-              return Number(num)
-            })
-          const thirdSumNume = thirdSumNumeArr.reduce(
-            (acumulator, currentValue) => acumulator + currentValue,
-            0
-          )
-          sumNumeFinal = thirdSumNume
-        } else {
-          sumNumeFinal = secondSumNume
-        }
-      }
-    }
-    
-    setResultNume(sumNumeFinal)
+  
     setResultPrenume(sumPrenumeFinal)
   }
-
+  console.log(resultPrenume)
+  
   const breadcrumbs = [
     <Link
       underline="hover"
@@ -241,7 +205,7 @@ export default function CifraNumelui() {
             )}
           </Box>
         </Collapse>
-        <Collapse
+        {/* <Collapse
           in={resultNume}
           transition={{ exit: { delay: 1 }, enter: { duration: 0.5 } }}
         >
@@ -266,7 +230,7 @@ export default function CifraNumelui() {
               </Heading>
             )}
           </Box>
-        </Collapse>
+        </Collapse> */}
       </Container>
     </Layout>
   )
