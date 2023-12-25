@@ -59,7 +59,7 @@ export default function AnalizaNumerologicaPerdsonalizata (){
       </div>
     </Link>,
     <Typography key="3" color="text.primary">
-      Ce este numerologia
+      Analiza numerologică personalizată
     </Typography>,
   ]
 

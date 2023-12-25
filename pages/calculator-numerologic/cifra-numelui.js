@@ -44,8 +44,9 @@ export default function CifraNumelui() {
       x: 6,
       y: 7,
       z: 8,
+      "":0,
     }
-    if (str?.length == 1) return anum[str] || ' '
+    if (str?.length === 1) return anum[str] || ' '
     return str?.split('').map(letterValue)
   }
 
@@ -56,8 +57,18 @@ export default function CifraNumelui() {
     const firstNumeArr = letterValue(nume.toLowerCase())
     const firstPrenumeArr = letterValue(prenume.toLowerCase())
 
-    if (prenume.length > 0 && firstPrenumeArr.length >= 2) {
-      const firstSumPrenume = firstPrenumeArr.reduce(
+    // Funcție care elimină spațiile și convertește restul caracterelor în numere
+  function processName(name) {
+    return letterValue(name.replace(/\s/g, '').toLowerCase());
+  }
+
+  // Procesează numele și prenumele pentru a elimina spațiile
+  const processedFirstNumeArr = processName(nume);
+  const processedFirstPrenumeArr = processName(prenume);
+
+
+    if (prenume.length > 0 && processedFirstPrenumeArr.length >= 2) {
+      const firstSumPrenume = processedFirstPrenumeArr.reduce(
         (acumulator, currentValue) => acumulator + currentValue,
         0
       )
@@ -90,8 +101,8 @@ export default function CifraNumelui() {
       }
     }
 
-    if (nume.length > 0 && firstNumeArr.length >= 2) {
-      const firstSumNume = firstNumeArr.reduce(
+    if (nume.length > 0 && processedFirstNumeArr.length >= 2) {
+      const firstSumNume = processedFirstNumeArr.reduce(
         (acumulator, currentValue) => acumulator + currentValue,
         0
       )
@@ -123,7 +134,7 @@ export default function CifraNumelui() {
         }
       }
     }
-
+    
     setResultNume(sumNumeFinal)
     setResultPrenume(sumPrenumeFinal)
   }
@@ -181,24 +192,17 @@ export default function CifraNumelui() {
         <Box bg={'#e5e5e5'} padding={4}>
           <div className="block md:flex items-center gap-4">
             <div className="w-full">
-              <label>Prenume</label>
+              <label>Introdu numele tau</label>
               <Input
                 bg={'#fff'}
                 size="sm"
                 value={prenume}
+                placeholder='Introdu numele tau'
                 onChange={(ev) => setPrenume(ev.target.value)}
               />
             </div>
 
-            <div className="w-full">
-              <label>Nume</label>
-              <Input
-                bg={'#fff'}
-                size="sm"
-                value={nume}
-                onChange={(ev) => setNume(ev.target.value)}
-              />
-            </div>
+           
           </div>
 
           <Button
@@ -229,7 +233,7 @@ export default function CifraNumelui() {
           >
             {resultPrenume > 0 && (
               <Heading as="h1" size="3xl" noOfLines={1} count={1}>
-                Cifra Prenume:{' '}
+                Cifra numelui este:{' '}
                 <span className="font-semibold text-black">
                   {resultPrenume}
                 </span>

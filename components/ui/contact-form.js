@@ -77,7 +77,7 @@ export default function ContactForm() {
         </Text>
       )}
       <FormControl isRequired isInvalid={touched.name && !values.name} mb={4}>
-        <FormLabel>Nume și prenume</FormLabel>
+        <FormLabel>Nume</FormLabel>
         <Input
           m={0}
           type="text"
@@ -105,7 +105,7 @@ export default function ContactForm() {
           Acest câmp este obligatoriu.
         </FormErrorMessage>
       </FormControl>
-      <FormControl
+      {/* <FormControl
         isRequired
         isInvalid={touched.name && !values.subject}
         mb={4}
@@ -122,7 +122,7 @@ export default function ContactForm() {
         <FormErrorMessage fontSize={12} color={'red.600'}>
           Acest câmp este obligatoriu.
         </FormErrorMessage>
-      </FormControl>
+      </FormControl> */}
       <FormControl
         isRequired
         isInvalid={touched.name && !values.message}

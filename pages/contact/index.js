@@ -69,7 +69,7 @@ export default function ContactPage() {
                   Contactează-mă
                 </Heading>
 
-                <Text textAlign={'center'} fontSize={'md'} color={'#909090'}>
+                {/* <Text textAlign={'center'} fontSize={'md'} color={'#909090'}>
                   Jungholzstr. 1
                 </Text>
                 <Text textAlign={'center'} fontSize={'md'} color={'#909090'}>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 </Text>
                 <Text textAlign={'center'} fontSize={'md'} color={'#909090'}>
                   +49 170 401 5687
-                </Text>
+                </Text> */}
 
                 <ContactForm />
               </Paper>
