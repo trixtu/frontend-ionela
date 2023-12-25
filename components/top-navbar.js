@@ -42,7 +42,7 @@ export default function TopNavBar() {
               </Link> */}
               <Link href={'/'} className="flex gap-1 items-center">
                 <EmailIcon fontSize="12px" />
-                cubitt12@gmail.com
+                numerologie.contact@gmail.com
               </Link>
             </ul>
           </Grid>

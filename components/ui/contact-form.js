@@ -146,7 +146,6 @@ export default function ContactForm() {
         variant={'contained'} 
         color="gold" 
         onClick={onSubmit} 
-        disabled={!values.name || !values.email || !values.message}
       >
         {isLoading && <Spinner size={'xl'} />}
         Trimite

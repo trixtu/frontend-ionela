@@ -14,7 +14,7 @@ export default function ContactMe() {
         Telefon: <span>0754 244 333</span>
       </Typography> */}
       <Typography variant="subtitle2">
-        E-mail: <span>vanzari@numerologie-consiliere.ro</span>
+        E-mail: <span>numerologie.contact@gmail.com</span>
       </Typography>
     </div>
   )
