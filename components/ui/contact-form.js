@@ -142,7 +142,12 @@ export default function ContactForm() {
           Acest câmp este obligatoriu.
         </FormErrorMessage>
       </FormControl>
-      <Button variant={'contained'} color="gold" onClick={onSubmit}>
+      <Button 
+        variant={'contained'} 
+        color="gold" 
+        onClick={onSubmit} 
+        disabled={!values.name || !values.email || !values.message}
+      >
         {isLoading && <Spinner size={'xl'} />}
         Trimite
       </Button>
