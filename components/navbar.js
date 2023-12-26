@@ -216,7 +216,7 @@ export default function Navbar() {
     <>
       <Disclosure
         as="nav"
-        className="bg-white border-b shadow sticky top-0 z-10"
+        className="bg-white border-b shadow sticky top-0 z-40"
       >
         {({ open }) => (
           <>
