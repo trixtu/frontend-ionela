@@ -31,8 +31,7 @@ const theme = createTheme({
 
 export const metadata = {
   title: 'Numerologie | Consiliere',
-  description:
-    'Descoperiti puterea numerologiei pentru a va ghida viata. Consultati experti in numerologie pentru  consiliere personalizata si intalegeti mai bine traseul vietii dvs. Aflati cum cifrele va pot dezvalui destinul. www.numerologie-consiliere.ro va ofera raspunsurile pe care le cautati.',
+  description: 'Descoperiti puterea numerologiei pentru a va ghida viata. Consultati experti in numerologie pentru  consiliere personalizata si intalegeti mai bine traseul vietii dvs. Aflati cum cifrele va pot dezvalui destinul. www.numerologie-consiliere.ro va ofera raspunsurile pe care le cautati.',
   metadataBase: new URL('https://www.numerologie-consiliere.ro'),
   charSet: 'utf-8',
 }
