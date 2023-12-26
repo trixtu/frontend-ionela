@@ -33,7 +33,7 @@ const handler = async (req, res) => {
   console.log(req.body)
   if (req.method === 'POST') {
     const data = req.body
-    if (!data.name || !data.email) {
+    if (!data.name || !data.email) 
       return res.status(400).json({ message: 'Bad request' })
     }
 
