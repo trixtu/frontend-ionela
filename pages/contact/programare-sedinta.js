@@ -12,7 +12,6 @@ import { useState } from "react";
 const initValues = {
   name:'',
   lastName:'',
-  dataNastere:'',
   email:'',
   telefon:'',
   subject:'Programare: 1 ȘEDINȚĂ',
@@ -153,20 +152,6 @@ console.log(values)
                 onChange={handleChange}
               />
             </FormControl>
-        
-        <FormControl isRequired mb={5} isInvalid={touched.dataNastere && !values.dataNastere}>
-          <FormLabel>ZIUA - LUNA - ANUL nasterii</FormLabel>
-          <Input
-            className={touched.dataNastere && !values.dataNastere ? 'mb-0 border-red-500' : null}
-            type="text"
-            name="dataNastere"
-            value={values.dataNastere}
-            onChange={handleChange}
-            errorBorderColor="red.300"
-            onBlur={onBlur}
-          />
-          <FormErrorMessage className="text-red-500">Required</FormErrorMessage>
-        </FormControl>
 
         <FormControl isRequired mb={5} isInvalid={touched.email && !values.email}>
           <FormLabel>Email</FormLabel>
@@ -210,7 +195,7 @@ console.log(values)
         <Button
           variant="contained"
           color="gold"
-          disabled={!values.name || !values.email || !values.lastName || !values.telefon || !values.dataNastere}
+          disabled={!values.name || !values.email || !values.lastName || !values.telefon}
           onClick={onSubmit}
         >
           {isLoading ? 'Loading...' : 'Trimite Programarea'}
