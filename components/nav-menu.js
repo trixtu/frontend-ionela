@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 
 export default function NavMenu() {
   const router = useRouter()
+  
   const navigation = [
     { name: 'Acasa', href: '/', current: router.pathname === '/' && true },
     {

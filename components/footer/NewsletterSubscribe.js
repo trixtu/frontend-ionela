@@ -1,6 +1,6 @@
 import React from 'react'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import NesletterForm from './NesletterForm'
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 const NewsletterSubscribe = () => {
   const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_SUBSCRIBE_URL

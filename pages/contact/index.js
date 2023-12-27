@@ -12,7 +12,6 @@ import Link from 'next/link'
 import HomeIcon from '@mui/icons-material/Home'
 import { useRouter } from 'next/router'
 import Breadcrumb from '@/components/ui/breadcrumb'
-import { Metadata } from 'next'
 
 const initValues = { name: '', email: '', subject: '', message: '' }
 const initState = { values: initValues }
@@ -68,17 +67,6 @@ export default function ContactPage() {
                 <Heading fontWeight={500} fontSize={24} textAlign={'center'}>
                   Contactează-mă
                 </Heading>
-
-                {/* <Text textAlign={'center'} fontSize={'md'} color={'#909090'}>
-                  Jungholzstr. 1
-                </Text>
-                <Text textAlign={'center'} fontSize={'md'} color={'#909090'}>
-                  76726 Germersheim, Germany
-                </Text>
-                <Text textAlign={'center'} fontSize={'md'} color={'#909090'}>
-                  +49 170 401 5687
-                </Text> */}
-
                 <ContactForm />
               </Paper>
             </Grid>

@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout'
 import Breadcrumb from '@/components/ui/breadcrumb'
 import { Container, Paper, Typography } from '@mui/material'
-import { HomeIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import HomeIcon from '@mui/icons-material/Home'
 import { useRouter } from 'next/router'
 import React from 'react'
 
@@ -36,7 +36,15 @@ export default function Four() {
   return <Layout>
     <Container>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <div className='flex justify-center items-center mt-4 h-full'>
+      <div 
+        className='
+          flex 
+          justify-center 
+          items-center 
+          mt-4 
+          h-full
+        '
+      >
         <Image
           src={'/images/foto-numere/numarul4.jpeg'}
           alt=""

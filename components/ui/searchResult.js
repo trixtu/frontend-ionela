@@ -1,7 +1,7 @@
-import { Heading, Image } from '@chakra-ui/react'
-import { Divider } from '@mui/material'
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
+import { Divider } from '@mui/material'
+import { Heading, Image } from '@chakra-ui/react'
 
 export default function earchResult({ products, isOpen, setIsOpen }) {
   return (

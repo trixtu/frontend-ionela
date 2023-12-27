@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import StarOutlineIcon from '@mui/icons-material/StarOutline'
 import StarRateIcon from '@mui/icons-material/StarRate'
+import StarOutlineIcon from '@mui/icons-material/StarOutline'
+
 export default function StarsRating({
   defaultHowMany = 0,
   disabled,

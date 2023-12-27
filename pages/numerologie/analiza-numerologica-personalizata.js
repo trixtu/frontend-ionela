@@ -5,7 +5,7 @@ import { CleaningServices } from "@mui/icons-material";
 import { Box, Container, Paper, Typography } from "@mui/material";
 import axios from "axios";
 import { Markup } from "interweave";
-import { HomeIcon } from "lucide-react";
+import HomeIcon from '@mui/icons-material/Home'
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";

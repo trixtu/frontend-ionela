@@ -1,10 +1,10 @@
+import Link from 'next/link'
+import { Button } from '@mui/material'
 import React, { useState } from 'react'
+import { sanitize } from '@/utils/miscellaneous'
+import YouTubeIcon from '@mui/icons-material/YouTube'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
-import Link from 'next/link'
-import YouTubeIcon from '@mui/icons-material/YouTube'
-import { Button } from '@mui/material'
-import { sanitize } from '@/utils/miscellaneous'
 
 const NesletterForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null)

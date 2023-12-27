@@ -1,3 +1,5 @@
+import { Button } from '@mui/material'
+import React, { useState } from 'react'
 import { sentContactForm } from '@/lib/api'
 import {
   FormControl,
@@ -9,11 +11,11 @@ import {
   Textarea,
   useToast,
 } from '@chakra-ui/react'
-import { Button } from '@mui/material'
-import React, { useState } from 'react'
+
 
 const initValues = { name: '', email: '', message: '' }
 const initState = { values: initValues }
+
 
 export default function ContactForm() {
   const toast = useToast()
@@ -105,24 +107,6 @@ export default function ContactForm() {
           Acest câmp este obligatoriu.
         </FormErrorMessage>
       </FormControl>
-      {/* <FormControl
-        isRequired
-        isInvalid={touched.name && !values.subject}
-        mb={4}
-      >
-        <FormLabel>Subiect</FormLabel>
-        <Input
-          type="text"
-          m={0}
-          name="subject"
-          value={values.subject}
-          onChange={handleChange}
-          onBlur={onBlur}
-        />
-        <FormErrorMessage fontSize={12} color={'red.600'}>
-          Acest câmp este obligatoriu.
-        </FormErrorMessage>
-      </FormControl> */}
       <FormControl
         isRequired
         isInvalid={touched.name && !values.message}
