@@ -158,7 +158,6 @@ export default function CifraNumelui() {
             <div className="w-full">
               <label>Introdu numele tau</label>
               <Input
-                bg={'#fff'}
                 size="sm"
                 value={prenume}
                 placeholder='Introdu numele tau'
