@@ -7,6 +7,7 @@ const CONTACT_MESSAGE_FIELDS = {
   dataNastere:'Data nastere',
   email: 'Email',
   subject:'Subiect',
+  tipProgramare:'Tip programare',
   message: 'Mesaj',
 }
 
