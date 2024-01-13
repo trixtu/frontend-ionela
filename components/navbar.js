@@ -513,13 +513,25 @@ export default function Navbar() {
                 {item.submenu && <KeyboardArrowDownIcon fontSize="small" />}
               </Link>
               {item.submenu && (
-                <ul className="nav__submenu absolute border w-[300px] px-2 py-2 shadow-lg rounded-sm bg-white z-50">
+                <ul 
+                  className="
+                    nav__submenu 
+                    absolute 
+                    border 
+                    w-[300px] 
+                    px-2 py-2 
+                    shadow-lg 
+                    rounded-sm 
+                    bg-white 
+                    z-50
+                  "
+                >
                   {item.submenu.map((submenu, index) => (
                     <Link key={index} href={submenu.href}>
                       <li
                         className={classNames(
                           submenu.current
-                            ? ' text-[#46915f] font-semibold'
+                            ? 'text-[#46915f] font-semibold'
                             : 'text-gray-900 font-semibold hover:text-[#46915f]',
                           'px-1 text-sm font-semibold nav__submenu-item py-1 '
                         )}

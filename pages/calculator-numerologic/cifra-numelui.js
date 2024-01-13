@@ -205,32 +205,6 @@ export default function CifraNumelui() {
             )}
           </Box>
         </Collapse>
-        {/* <Collapse
-          in={resultNume}
-          transition={{ exit: { delay: 1 }, enter: { duration: 0.5 } }}
-        >
-          <Box
-            style={{
-              backgroundImage:
-                ' url(/images/360_F_101044570_T9unk816eB6uiN0J29omibuDfzDkpxu9.jpg)',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-            }}
-            p="20px"
-            color="#fff6c9"
-            mt="4"
-            rounded="md"
-            shadow="md"
-            fontSize={'2xl'}
-          >
-            {resultNume > 0 && (
-              <Heading as="h1" size="3xl" noOfLines={1} count={1}>
-                Cifra Nume:{' '}
-                <span className="font-semibold text-black">{resultNume}</span>
-              </Heading>
-            )}
-          </Box>
-        </Collapse> */}
       </Container>
     </Layout>
   )

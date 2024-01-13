@@ -1,16 +1,16 @@
-import Layout from '@/components/Layout'
-import { mongooseConnect } from '@/lib/mongoose'
-import { Product } from '@/models/Product'
-import React from 'react'
-import { getServerSession } from 'next-auth'
-import { authOptions } from './api/auth/[...nextauth]'
-import { WhischedProduct } from '@/models/WischedProduct'
-import { Review } from '@/models/Review'
-import { Slider } from '@/models/Slider'
-import Head from 'next/head'
-import SliderHome from '@/components/slider'
-import { NextSeo } from 'next-seo'
-import HomePageUnu from '@/components/home-page-unu'
+import Layout from "@/components/Layout";
+import { mongooseConnect } from "@/lib/mongoose";
+import { Product } from "@/models/Product";
+import React from "react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]";
+import { WhischedProduct } from "@/models/WischedProduct";
+import { Review } from "@/models/Review";
+import { Slider } from "@/models/Slider";
+import Head from "next/head";
+import SliderHome from "@/components/slider";
+import { NextSeo } from "next-seo";
+import HomePageUnu from "@/components/home-page-unu";
 
 const SEO = () => {
   <>
@@ -19,13 +19,13 @@ const SEO = () => {
       openGraph={{
         images: [
           {
-            url: '',
+            url: "",
           },
         ],
       }}
     />
-  </>
-}
+  </>;
+};
 
 export default function HomePage({
   products,
@@ -37,6 +37,22 @@ export default function HomePage({
     <Layout slider={slider}>
       <Head>
         <title>Home</title>
+
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+            `,
+          }}
+        />
       </Head>
 
       <SliderHome slider={slider} />
@@ -47,32 +63,32 @@ export default function HomePage({
       /> */}
       <HomePageUnu />
     </Layout>
-  )
+  );
 }
 
 export async function getServerSideProps(ctx) {
-  await mongooseConnect()
-  const id = '65089fd9df4de10e9a43c43b'
-  const slider = await Slider.findById(id)
+  await mongooseConnect();
+  const id = "65089fd9df4de10e9a43c43b";
+  const slider = await Slider.findById(id);
   const products = await Product.find({}, null, {
     sort: { _id: -1 },
     limit: 10,
-  })
+  });
 
-  const session = await getServerSession(ctx.req, ctx.res, authOptions)
+  const session = await getServerSession(ctx.req, ctx.res, authOptions);
 
   const wishedNewProducts = session?.user
     ? await WhischedProduct.find({
         userEmail: session.user.email,
         product: products.map((p) => p._id.toString()),
       })
-    : []
+    : [];
 
   // const productId = products.map((p) => p._id.toString())
 
   const ratings = await Review.find({}, null, {
     sort: { _id: -1 },
-  })
+  });
 
   return {
     props: {
@@ -81,5 +97,5 @@ export async function getServerSideProps(ctx) {
       ratings: JSON.parse(JSON.stringify(ratings)),
       wishedNewProducts: wishedNewProducts.map((i) => i.product.toString()),
     },
-  }
+  };
 }
