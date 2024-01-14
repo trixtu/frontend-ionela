@@ -48,7 +48,7 @@ export default function Four() {
         <Image
           src={'/images/foto-numere/4.jpg'}
           alt=""
-          width={350}
+          width={550}
           height={600}
           priority
           loading="eager"
