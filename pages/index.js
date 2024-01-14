@@ -66,6 +66,7 @@ export default function HomePage({
   );
 }
 
+
 export async function getServerSideProps(ctx) {
   await mongooseConnect();
   const id = "65089fd9df4de10e9a43c43b";
