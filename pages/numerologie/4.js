@@ -46,7 +46,7 @@ export default function Four() {
         '
       >
         <Image
-          src={'/images/foto-numere/numarul4.jpeg'}
+          src={'/images/foto-numere/4.jpg'}
           alt=""
           width={350}
           height={600}
